@@ -33,14 +33,14 @@
 	<!-- Featured Products -->
 	<section>
 		<div class="container mx-auto">
-			<h2 class="mb-8 text-center text-3xl font-bold text-primary-900">Our Specialties</h2>
+			<h2 class="mb-8 text-center text-3xl font-bold text-primary-900">Recent Creations</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 				{#each [{ name: 'Strawberry Cupcakes', desc: 'Fresh strawberry cupcakes topped with buttercream frosting.', img: 'cupcake.jpg' }, { name: 'Chocolate Croissants', desc: 'Buttery, flaky croissants filled with rich chocolate.', img: 'croissant.jpg' }, { name: 'Lemon Tart', desc: 'Tangy lemon curd in a buttery shortbread crust.', img: 'tart.jpg' }] as product}
 					<div
 						class="flex flex-col rounded-lg bg-primary-50 p-6 shadow-md transition duration-300 hover:drop-shadow-xl"
 					>
 						<div
-							class="mb-4 flex h-52 items-center justify-center rounded bg-pink-200 text-pink-800"
+							class="mb-4 flex h-52 items-center justify-center rounded bg-secondary-50 text-primary-800"
 						>
 							<span class="text-6xl">🍰</span>
 						</div>
@@ -87,12 +87,12 @@
 	<!-- Testimonials -->
 	<section>
 		<div class="container mx-auto px-4">
-			<h2 class="mb-8 text-center text-3xl font-bold text-pink-800">What Our Customers Say</h2>
+			<h2 class="mb-8 text-center text-3xl font-bold text-primary-800">Testimonials?</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 				{#each [{ name: 'Sarah M.', quote: "The best cupcakes I've ever had! Soul Sweets is now my go-to for all celebrations." }, { name: 'John D.', quote: 'Their sourdough bread is amazing. I stop by every weekend to get a fresh loaf.' }] as testimonial}
-					<div class="rounded-lg bg-pink-100 p-6" transition:slide>
-						<p class="mb-4 text-pink-700 italic">"{testimonial.quote}"</p>
-						<p class="font-bold text-pink-800">— {testimonial.name}</p>
+					<div class="rounded-lg bg-tertiary-100 p-6" transition:slide>
+						<p class="mb-4 text-primary-700 italic">"{testimonial.quote}"</p>
+						<p class="font-bold text-primary-800">— {testimonial.name}</p>
 					</div>
 				{/each}
 			</div>
@@ -100,16 +100,16 @@
 	</section>
 
 	<!-- Call to Action -->
-	<section class="rounded-lg bg-pink-600 py-12 text-white">
+	<section class="rounded-lg bg-secondary-100 py-12 text-surface-50">
 		<div class="container mx-auto px-4 text-center">
-			<h2 class="mb-4 text-3xl font-bold">Ready to Experience Soul Sweets?</h2>
+			<h2 class="mb-4 text-3xl font-bold">Ready to Order?</h2>
 			<p class="mx-auto mb-8 max-w-2xl">
-				Visit our bakery today or order online for special events and celebrations.
+				Visit our menu or order online for special events and celebrations!
 			</p>
 			<div class="flex flex-col justify-center gap-4 sm:flex-row">
 				<a
 					href="/contact"
-					class="rounded-full bg-white px-8 py-3 font-medium text-pink-700 transition duration-300 hover:bg-pink-100"
+					class="rounded-full bg-white px-8 py-3 font-medium text-primary-600 transition duration-300 hover:bg-primary-100"
 				>
 					Find Our Location
 				</a>
