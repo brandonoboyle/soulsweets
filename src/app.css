@@ -1,3 +1,23 @@
 @import 'tailwindcss';
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/optional/presets';
+@import '@skeletonlabs/skeleton/themes/rose';
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
+/* [data-theme='rose'] body {
+	background-color: hsla(223, 73%, 97%, 1);
+	background-image:
+		radial-gradient(at 82% 18%, hsla(248, 39%, 85%, 1) 0px, transparent 50%),
+		radial-gradient(at 19% 25%, hsla(248, 39%, 85%, 1) 0px, transparent 50%),
+		radial-gradient(at 86% 85%, hsla(249, 39%, 85%, 1) 0px, transparent 50%),
+		radial-gradient(at 10% 85%, hsla(250, 40%, 85%, 1) 0px, transparent 50%);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+} */
+
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
