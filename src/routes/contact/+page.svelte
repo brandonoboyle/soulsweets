@@ -22,58 +22,58 @@
 
 <div class="py-12">
 	<div class="container mx-auto px-4">
-		<h1 class="text-4xl font-bold text-pink-800 mb-8 text-center">Contact Us</h1>
+		<h1 class="text-primary-800 mb-8 text-center text-4xl font-bold">Contact Us</h1>
 
-		<div class="max-w-6xl mx-auto">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+		<div class="mx-auto max-w-6xl">
+			<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
 				<!-- Contact Information -->
 				<div>
-					<div class="bg-white p-8 rounded-lg shadow-md mb-8">
-						<h2 class="text-2xl font-bold text-pink-700 mb-6">Get in Touch</h2>
+					<div class="mb-8 rounded-lg bg-white p-8 shadow-md">
+						<h2 class="text-primary-700 mb-6 text-2xl font-bold">Get in Touch</h2>
 						<div class="space-y-4">
 							<div class="flex items-start">
-								<div class="text-2xl text-pink-600 mr-4">📍</div>
+								<div class="text-primary-600 mr-4 text-2xl">📍</div>
 								<div>
-									<h3 class="font-bold text-pink-700">Address</h3>
-									<p class="text-pink-600">123 Bakery Lane</p>
-									<p class="text-pink-600">Sweet Town, ST 12345</p>
+									<h3 class="text-primary-700 font-bold">Address</h3>
+									<p class="text-primary-600">123 Address Street</p>
+									<p class="text-primary-600">Ottawa, Postal Code</p>
 								</div>
 							</div>
 							<div class="flex items-start">
-								<div class="text-2xl text-pink-600 mr-4">📞</div>
+								<div class="text-primary-600 mr-4 text-2xl">📞</div>
 								<div>
-									<h3 class="font-bold text-pink-700">Phone</h3>
-									<p class="text-pink-600">(555) 123-4567</p>
+									<h3 class="text-primary-700 font-bold">Phone</h3>
+									<p class="text-primary-600">Real-Phone-Number</p>
 								</div>
 							</div>
 							<div class="flex items-start">
-								<div class="text-2xl text-pink-600 mr-4">📧</div>
+								<div class="text-primary-600 mr-4 text-2xl">📧</div>
 								<div>
-									<h3 class="font-bold text-pink-700">Email</h3>
-									<p class="text-pink-600">hello@soulsweets.com</p>
+									<h3 class="text-primary-700 font-bold">Email</h3>
+									<p class="text-primary-600">soulsweetemail.com</p>
 								</div>
 							</div>
 							<div class="flex items-start">
-								<div class="text-2xl text-pink-600 mr-4">🕒</div>
+								<div class="text-primary-600 mr-4 text-2xl">🕒</div>
 								<div>
-									<h3 class="font-bold text-pink-700">Hours</h3>
-									<p class="text-pink-600">Monday-Friday: 7am-6pm</p>
-									<p class="text-pink-600">Saturday: 8am-5pm</p>
-									<p class="text-pink-600">Sunday: 8am-3pm</p>
+									<h3 class="text-primary-700 font-bold">Hours</h3>
+									<p class="text-primary-600">Monday-Friday: 7am-6pm</p>
+									<p class="text-primary-600">Saturday: 8am-5pm</p>
+									<p class="text-primary-600">Sunday: 8am-3pm</p>
 								</div>
 							</div>
 						</div>
 					</div>
 
 					<!-- Map Placeholder -->
-					<div class="bg-pink-100 p-4 rounded-lg shadow-md">
-						<div class="h-64 bg-pink-200 rounded flex items-center justify-center">
-							<div class="text-center p-4">
-								<div class="text-4xl mb-2">🗺️</div>
-								<p class="text-pink-800">
-									Map would be embedded here in a production site.
+					<div class="bg-primary-100 rounded-lg p-4 shadow-md">
+						<div class="bg-primary-200 flex h-64 items-center justify-center rounded">
+							<div class="p-4 text-center">
+								<div class="mb-2 text-4xl">🗺️</div>
+								<p class="text-primary-800">
+									Map would be embedded here.
 									<br />
-									Find us at 123 Bakery Lane, Sweet Town
+									Find us at 123 address street
 								</p>
 							</div>
 						</div>
@@ -81,43 +81,43 @@
 				</div>
 
 				<!-- Contact Form -->
-				<div class="bg-white p-8 rounded-lg shadow-md">
-					<h2 class="text-2xl font-bold text-pink-700 mb-6">Send Us a Message</h2>
-					
+				<div class="rounded-lg bg-white p-8 shadow-md">
+					<h2 class="text-primary-700 mb-6 text-2xl font-bold">Send Us a Message</h2>
+
 					{#if submitted}
-						<div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
+						<div class="mb-6 rounded border border-green-400 bg-green-100 px-4 py-3 text-green-700">
 							Thank you for your message! We'll get back to you soon.
 						</div>
 					{/if}
-					
+
 					<form on:submit|preventDefault={handleSubmit} class="space-y-4">
 						<div>
-							<label for="name" class="block text-pink-700 font-medium mb-1">Name</label>
+							<label for="name" class="text-primary-700 mb-1 block font-medium">Name</label>
 							<input
 								type="text"
 								id="name"
 								bind:value={name}
 								required
-								class="w-full px-4 py-2 border border-pink-200 rounded focus:outline-none focus:ring-2 focus:ring-pink-300"
+								class="border-primary-200 focus:ring-primary-300 w-full rounded border px-4 py-2 focus:ring-2 focus:outline-none"
 							/>
 						</div>
 						<div>
-							<label for="email" class="block text-pink-700 font-medium mb-1">Email</label>
+							<label for="email" class="text-primary-700 mb-1 block font-medium">Email</label>
 							<input
 								type="email"
 								id="email"
 								bind:value={email}
 								required
-								class="w-full px-4 py-2 border border-pink-200 rounded focus:outline-none focus:ring-2 focus:ring-pink-300"
+								class="border-primary-200 focus:ring-primary-300 w-full rounded border px-4 py-2 focus:ring-2 focus:outline-none"
 							/>
 						</div>
 						<div>
-							<label for="subject" class="block text-pink-700 font-medium mb-1">Subject</label>
+							<label for="subject" class="text-primary-700 mb-1 block font-medium">Subject</label>
 							<select
 								id="subject"
 								bind:value={subject}
 								required
-								class="w-full px-4 py-2 border border-pink-200 rounded focus:outline-none focus:ring-2 focus:ring-pink-300"
+								class="border-primary-200 focus:ring-primary-300 w-full rounded border px-4 py-2 focus:ring-2 focus:outline-none"
 							>
 								<option value="">Please select a subject</option>
 								<option value="General Inquiry">General Inquiry</option>
@@ -128,18 +128,18 @@
 							</select>
 						</div>
 						<div>
-							<label for="message" class="block text-pink-700 font-medium mb-1">Message</label>
+							<label for="message" class="text-primary-700 mb-1 block font-medium">Message</label>
 							<textarea
 								id="message"
 								bind:value={message}
 								required
 								rows="6"
-								class="w-full px-4 py-2 border border-pink-200 rounded focus:outline-none focus:ring-2 focus:ring-pink-300"
+								class="border-primary-200 focus:ring-primary-300 w-full rounded border px-4 py-2 focus:ring-2 focus:outline-none"
 							></textarea>
 						</div>
 						<button
 							type="submit"
-							class="px-6 py-3 bg-pink-600 text-white rounded-full font-medium hover:bg-pink-700 transition duration-300 w-full md:w-auto"
+							class="bg-primary-600 hover:bg-primary-700 w-full rounded-full px-6 py-3 font-medium text-white transition duration-300 md:w-auto"
 						>
 							Send Message
 						</button>
@@ -149,24 +149,24 @@
 		</div>
 
 		<!-- Special Orders Section -->
-		<div class="max-w-4xl mx-auto mt-16">
-			<div class="bg-pink-50 p-8 rounded-lg">
-				<h2 class="text-2xl font-bold text-pink-800 mb-4">Special Orders & Catering</h2>
-				<p class="text-pink-700 mb-4">
-					Looking for custom cakes, catering for an event, or bulk orders? We'd love to help make your occasion special
-					with our handcrafted treats.
+		<div class="mx-auto mt-16 max-w-6xl">
+			<div class="rounded-lg bg-pink-50 p-8">
+				<h2 class="text-primary-800 mb-4 text-2xl font-bold">Special Orders & Catering</h2>
+				<p class="text-primary-700 mb-4">
+					Looking for custom cakes, catering for an event, or bulk orders? We'd love to help make
+					your occasion special with our handcrafted treats.
 				</p>
-				<p class="text-pink-700 mb-6">
-					For special orders, please contact us at least 48 hours in advance. For large events or wedding cakes, we
-					recommend reaching out 2-4 weeks ahead to ensure availability.
+				<p class="text-primary-700 mb-6">
+					For special orders over $300, please contact us at least 3 weeks in advance. For large
+					events or wedding cakes, we recommend reaching out 4-6 weeks ahead to ensure availability.
 				</p>
 				<a
-					href="tel:5551234567"
-					class="inline-block px-6 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition duration-300"
+					href="tel:Real-Phone-Number"
+					class="bg-primary-600 text-primary-50 hover:bg-primary-700 inline-block rounded-full px-6 py-2 transition duration-300"
 				>
-					Call Us: (555) 123-4567
+					Call Us: Real-Phone-Number
 				</a>
 			</div>
 		</div>
 	</div>
-</div> 
+</div>

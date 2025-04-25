@@ -111,13 +111,13 @@
 					href="/contact"
 					class="rounded-full bg-white px-8 py-3 font-medium text-primary-600 transition duration-300 hover:bg-primary-100"
 				>
-					Find Our Location
+					View Selection
 				</a>
 				<a
 					href="/menu"
-					class="rounded-full border-2 border-white bg-transparent px-8 py-3 font-medium text-white transition duration-300 hover:bg-pink-700"
+					class="rounded-full border-2 border-surface-50 bg-transparent px-8 py-3 font-medium text-primary-50 transition duration-300 hover:bg-primary-700"
 				>
-					Order Special Items
+					Custom Order
 				</a>
 			</div>
 		</div>
