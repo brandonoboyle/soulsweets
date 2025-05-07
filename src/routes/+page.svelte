@@ -8,17 +8,17 @@
 	<!-- Hero Section -->
 	<section class="relative">
 		<div
-			class="from-secondary-50 to-secondary-100 flex overflow-hidden rounded-lg bg-gradient-to-r drop-shadow-xl"
+			class="from-secondary-100 to-secondary-50 flex overflow-hidden rounded-lg bg-gradient-to-r drop-shadow-xl"
 		>
 			<!-- Below is the Carousel div -->
-			<div class="flex w-1/2 border-2">
-				<!-- <div class="carousel">
+			<!-- <div class="flex w-1/2 border-2">
+				<div class="carousel">
 					<li>
 						<img src={goodies} alt="Goodies" />
 					</li>
-				</div> -->
-			</div>
-			<div class="flex w-1/2 flex-col items-center px-4 py-20 text-center">
+				</div>
+			</div> -->
+			<div class="container mx-auto flex flex-col items-center px-4 py-20 text-center">
 				<img src={logo} alt="Soul Sweets Logo" class="mb-6 rounded-full" />
 				<!-- <h1 class="text-4xl md:text-6xl font-bold text-surface-800 mb-6">Soul Sweets</h1> -->
 				<p class="text-tertiary-900 mb-8 max-w-2xl text-xl">A nice little blurb here maybe</p>
@@ -43,7 +43,7 @@
 	<!-- Featured Products -->
 	<section>
 		<div class="container mx-auto">
-			<h2 class="text-primary-900 mb-8 text-center text-3xl font-bold">Recent Creations</h2>
+			<h2 class="text-primary-900 mb-8 text-center text-3xl font-bold">Dessert Menu</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 				{#each [{ name: 'Cakes', desc: 'Fresh strawberry cupcakes topped with buttercream frosting.', img: 'cupcake.jpg' }, { name: 'Cupcakes', desc: 'Buttery, flaky croissants filled with rich chocolate.', img: 'croissant.jpg' }, { name: 'Brownies', desc: 'Tangy lemon curd in a buttery shortbread crust.', img: 'tart.jpg' }] as product}
 					<div
@@ -112,7 +112,9 @@
 	</section>
 
 	<!-- Call to Action -->
-	<section class="bg-secondary-100 text-surface-50 rounded-lg py-12">
+	<section
+		class="from-secondary-100 to-secondary-50 text-surface-50 rounded-lg bg-gradient-to-r py-12"
+	>
 		<div class="container mx-auto px-4 text-center">
 			<h2 class="mb-4 text-3xl font-bold">Ready to Order?</h2>
 			<p class="mx-auto mb-8 max-w-2xl">
@@ -121,7 +123,7 @@
 			<div class="flex flex-col justify-center gap-4 sm:flex-row">
 				<a
 					href="/contact"
-					class="text-primary-600 hover:bg-primary-100 rounded-full bg-white px-8 py-3 font-medium transition duration-300"
+					class="text-primary-600 hover:bg-primary-100 bg-primary-50 rounded-full px-8 py-3 font-medium transition duration-300"
 				>
 					View Selection
 				</a>
@@ -137,7 +139,7 @@
 </div>
 
 <style>
-	.carousel {
+	/* .carousel {
 		list-style: none;
 		margin: 5rem;
 		padding: 1rem;
@@ -203,5 +205,5 @@
 			content: 'left';
 			position-area: center left;
 		}
-	}
+	} */
 </style>

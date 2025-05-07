@@ -39,6 +39,8 @@
 		"vite": "^6.2.5"
 	},
 	"dependencies": {
+		"@fontsource/mr-de-haviland": "^5.2.5",
+		"@fontsource/open-sans": "^5.2.5",
 		"lucide-svelte": "^0.503.0"
 	}
 }

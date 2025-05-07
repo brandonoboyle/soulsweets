@@ -2,7 +2,10 @@
 @import '@skeletonlabs/skeleton';
 @import '@skeletonlabs/skeleton/optional/presets';
 @import '@skeletonlabs/skeleton/themes/rose';
+@import '@fontsource/open-sans';
+@import '@fontsource/mr-de-haviland';
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
 
 /* [data-theme='rose'] body {
 	background-color: hsla(223, 73%, 97%, 1);
@@ -21,3 +24,11 @@
 @plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* body {
+  font-family: 'Mr De Haviland', cursive;
+} */
+
+.font-mr-de-haviland {
+  font-family: 'Mr De Haviland', cursive;
+}

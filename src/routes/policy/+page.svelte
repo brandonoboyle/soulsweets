@@ -1,9 +1,18 @@
 <script lang="ts">
-	import { ChevronDown } from 'lucide-svelte';
+	import { 
+		ChevronDown,
+		ShoppingCart,
+		CreditCard,
+		Truck,
+		RotateCcw,
+		Palette,
+		AlertTriangle
+	} from 'lucide-svelte';
 
 	interface Section {
 		title: string;
 		content: string[];
+		icon: any;
 	}
 
 	let activeSection: Section | null = null;
@@ -15,7 +24,8 @@
 				'General Orders: Orders must be placed at least two weeks in advance. Rush fees may apply for shorter notice.',
 				"Large Orders/Events: Orders over $300 require a minimum of three weeks' notice.",
 				'Order Confirmation: Orders are processed on a first-come, first-served basis. Availability is confirmed once the deposit is paid.'
-			]
+			],
+			icon: ShoppingCart
 		},
 		{
 			title: 'Payment',
@@ -24,7 +34,8 @@
 				'Balance Payment: Full payment is due 12 hours before pickup/delivery.',
 				"Rush Orders: Orders placed with less than two weeks' notice require full upfront, non-refundable payment.",
 				'Payment Methods: Cash, e-transfer, credit card, and debit are accepted.'
-			]
+			],
+			icon: CreditCard
 		},
 		{
 			title: 'Pickup & Delivery',
@@ -34,7 +45,8 @@
 				'Delivery: Upon request delivery is available and will incur an extra fee based on location. Delivery must be organized at the time of booking.',
 				'Fragility: Customers are responsible for handling and storing products properly after pickup or delivery. Soul Sweets is not responsible for any damages after the product leaves our care.',
 				'Inspection: Inspect your order upon delivery to confirm accuracy.'
-			]
+			],
+			icon: Truck
 		},
 		{
 			title: 'Refunds & Cancellations',
@@ -42,7 +54,8 @@
 				'Refunds are given only if the error is from Soul Sweets (wrong flavor/design). Requests must be submitted within 24 hours with a photo and description of the issue.',
 				'7+ Days Notice: Full refund minus the deposit.',
 				'5-6 Days Notice: 50% refund, as preparation has started.'
-			]
+			],
+			icon: RotateCcw
 		},
 		{
 			title: 'Design & Customization',
@@ -50,7 +63,8 @@
 				'Finalize design details (colors, themes, decorations) at least five days before the pickup/delivery date. Changes after that may incur additional charges.',
 				'Character Design: Hand-drawn character designs in buttercream require additional time and skill. For this reason, a buttercream character design fee will be added to your order total, starting at $30 and increasing based on the complexity and number of characters.',
 				'Final pricing will be confirmed after design approval.'
-			]
+			],
+			icon: Palette
 		},
 		{
 			title: 'Allergen & Dietary Disclaimer',
@@ -59,7 +73,8 @@
 				'Products are not guaranteed to be allergen-free due to the risk of cross-contamination.',
 				'Customers must inform us of any allergies or dietary restrictions at the time of ordering. By purchasing our products, customers acknowledge and accept these risks.',
 				'Soul Sweets is not liable for allergic reactions or health issues resulting from consuming our products.'
-			]
+			],
+			icon: AlertTriangle
 		}
 	];
 
@@ -82,7 +97,10 @@
 						class="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-pink-50"
 						on:click={() => toggleSection(section)}
 					>
-						<h2 class="text-primary-700 text-xl font-semibold">{section.title}</h2>
+						<div class="flex items-center gap-2">
+							<svelte:component this={section.icon} class="h-6 w-6 text-primary-600" />
+							<h2 class="text-primary-700 text-xl font-semibold">{section.title}</h2>
+						</div>
 						<ChevronDown
 							class="text-primary-600 h-6 w-6 transform transition-transform {activeSection ===
 							section
