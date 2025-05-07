@@ -14,6 +14,7 @@
 				<a href="/info" class="text-primary-900 hover:text-primary-600">Info</a>
 				<a href="/menu" class="text-primary-900 hover:text-primary-600">Menu</a>
 				<a href="/about" class="text-primary-900 hover:text-primary-600">About</a>
+				<a href="/care" class="text-primary-900 hover:text-primary-600">Care</a>
 				<a href="/contact" class="text-primary-900 hover:text-primary-600">Contact</a>
 			</div>
 		</nav>

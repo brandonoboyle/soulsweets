@@ -10,7 +10,7 @@
 		<div
 			class="from-secondary-50 to-secondary-100 flex overflow-hidden rounded-lg bg-gradient-to-r drop-shadow-xl"
 		>
-		<!-- Below is the Carousel div -->
+			<!-- Below is the Carousel div -->
 			<div class="flex w-1/2 border-2">
 				<!-- <div class="carousel">
 					<li>
@@ -45,7 +45,7 @@
 		<div class="container mx-auto">
 			<h2 class="text-primary-900 mb-8 text-center text-3xl font-bold">Recent Creations</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-				{#each [{ name: 'Strawberry Cupcakes', desc: 'Fresh strawberry cupcakes topped with buttercream frosting.', img: 'cupcake.jpg' }, { name: 'Chocolate Croissants', desc: 'Buttery, flaky croissants filled with rich chocolate.', img: 'croissant.jpg' }, { name: 'Lemon Tart', desc: 'Tangy lemon curd in a buttery shortbread crust.', img: 'tart.jpg' }] as product}
+				{#each [{ name: 'Cakes', desc: 'Fresh strawberry cupcakes topped with buttercream frosting.', img: 'cupcake.jpg' }, { name: 'Cupcakes', desc: 'Buttery, flaky croissants filled with rich chocolate.', img: 'croissant.jpg' }, { name: 'Brownies', desc: 'Tangy lemon curd in a buttery shortbread crust.', img: 'tart.jpg' }] as product}
 					<div
 						class="bg-primary-50 flex flex-col rounded-lg p-6 shadow-md transition duration-300 hover:drop-shadow-xl"
 					>
