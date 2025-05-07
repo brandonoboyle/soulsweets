@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { 
+	import {
 		ChevronDown,
 		ShoppingCart,
 		CreditCard,
@@ -86,19 +86,19 @@
 <div class="min-h-screen px-4 py-12 sm:px-6 lg:px-8">
 	<div class="mx-auto max-w-4xl">
 		<div class="mb-12 text-center">
-			<h1 class="text-primary-800 mb-4 text-4xl font-bold">Soul Sweets Policy</h1>
+			<h1 class="text-primary-500 mb-4 text-4xl font-bold">Soul Sweets Policy</h1>
 			<p class="text-primary-600 text-lg">~ with kindness and gratitude!</p>
 		</div>
 
 		<div class="space-y-4">
 			{#each sections as section}
-				<div class="overflow-hidden rounded-lg bg-white shadow-md">
+				<div class="bg-primary-50 overflow-hidden rounded-lg shadow-md">
 					<button
-						class="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-pink-50"
+						class="hover:bg-secondary-50 flex w-full items-center justify-between px-6 py-4 text-left transition-colors"
 						on:click={() => toggleSection(section)}
 					>
 						<div class="flex items-center gap-2">
-							<svelte:component this={section.icon} class="h-6 w-6 text-primary-600" />
+							<svelte:component this={section.icon} class="text-primary-600 h-6 w-6" />
 							<h2 class="text-primary-700 text-xl font-semibold">{section.title}</h2>
 						</div>
 						<ChevronDown
@@ -122,10 +122,10 @@
 			{/each}
 		</div>
 
-		<div class="bg-primary-50 mt-12 rounded-lg p-6 shadow-md">
+		<!-- <div class="bg-primary-50 mt-12 rounded-lg p-6 shadow-md">
 			<h2 class="text-primary-700 mb-4 text-2xl font-semibold">Contact Us</h2>
 			<div class="text-surface-700 space-y-2">
-				<p>Email: Bakery.SoulSweets@gmail.com</p>
+				<p>Email: Soulsweets@gmail.com</p>
 				<p>Instagram: @SoulSweetsBakery</p>
 				<p>Facebook: Soul Sweets</p>
 			</div>
@@ -138,7 +138,7 @@
 				If you share photos of our creations on social media, Soul Sweets would love to see them!
 				Feel free to tag us!
 			</p>
-		</div>
+		</div> -->
 	</div>
 </div>
 

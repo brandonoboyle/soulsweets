@@ -16,7 +16,7 @@
 		Cake & Dessert Care & Storage Guide
 	</h1>
 
-	<p class="mb-12 text-center text-lg text-gray-700">
+	<p class="text-primary-900 mb-12 text-center text-lg">
 		To keep your treats fresh and safe from damage please follow these guidelines for transporting,
 		storing, and serving your desserts.
 	</p>
@@ -28,7 +28,7 @@
 				<Truck class="h-8 w-8" />
 				Transporting Your Cake/Desserts
 			</h2>
-			<ul class="text-surface-700 space-y-4">
+			<ul class="text-primary-900 space-y-4">
 				<li class="flex items-start gap-2">
 					<CheckCircle2 class="mt-1 h-6 w-6 text-green-500" />
 					<span>Always carry your box from the bottom to prevent damage.</span>
