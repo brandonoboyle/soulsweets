@@ -45,7 +45,7 @@
 		<div class="container mx-auto">
 			<h2 class="text-primary-900 mb-8 text-center text-3xl font-bold">Dessert Menu</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-				{#each [{ name: 'Cakes', desc: 'Fresh strawberry cupcakes topped with buttercream frosting.', img: 'cupcake.jpg' }, { name: 'Cupcakes', desc: 'Buttery, flaky croissants filled with rich chocolate.', img: 'croissant.jpg' }, { name: 'Brownies', desc: 'Tangy lemon curd in a buttery shortbread crust.', img: 'tart.jpg' }] as product}
+				{#each [{ name: 'Cakes', desc: 'Extravagant, decadent cakes for every occasion.', img: 'cupcake.jpg' }, { name: 'Cupcakes', desc: 'Wonderful assortments to share', img: 'croissant.jpg' }, { name: 'Brownies', desc: 'Soft, chewy, and delicious made to your liking', img: 'tart.jpg' }] as product}
 					<div
 						class="bg-primary-50 flex flex-col rounded-lg p-6 shadow-md transition duration-300 hover:drop-shadow-xl"
 					>
@@ -98,7 +98,7 @@
 
 	<!-- Testimonials -->
 	<section>
-		<div class="container mx-auto px-4">
+		<div class="container mx-auto">
 			<h2 class="text-primary-800 mb-8 text-center text-3xl font-bold">Testimonials?</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 				{#each [{ name: 'Sarah M.', quote: "The best cupcakes I've ever had! Soul Sweets is now my go-to for all celebrations." }, { name: 'John D.', quote: 'Their sourdough bread is amazing. I stop by every weekend to get a fresh loaf.' }] as testimonial}
@@ -113,7 +113,7 @@
 
 	<!-- Call to Action -->
 	<section
-		class="from-secondary-100 to-secondary-50 text-surface-50 rounded-lg bg-gradient-to-r py-12"
+		class="from-secondary-200 to-secondary-100 text-primary-50 rounded-lg bg-gradient-to-r py-12"
 	>
 		<div class="container mx-auto px-4 text-center">
 			<h2 class="mb-4 text-3xl font-bold">Ready to Order?</h2>

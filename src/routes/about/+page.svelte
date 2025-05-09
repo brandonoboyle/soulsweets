@@ -54,7 +54,7 @@
 						<h3 class="text-primary-700 mb-2 text-lg font-bold">
 							Do you offer gluten-free options?
 						</h3>
-						<p class="text-primary-600">
+						<p class="text-primary-900">
 							Yes! We have a selection of gluten-free treats available daily. However, please note
 							that our kitchen is not a fully gluten-free environment.
 						</p>
@@ -63,28 +63,12 @@
 						<h3 class="text-primary-700 mb-2 text-lg font-bold">
 							How far in advance should I order a custom cake?
 						</h3>
-						<p class="text-primary-600">
+						<p class="text-primary-900">
 							We recommend ordering custom cakes at least 48 hours in advance. For more elaborate
 							designs or wedding cakes, please contact us at least two weeks ahead.
 						</p>
 					</div>
-					<div class="bg-tertiary-50 rounded-lg p-6 shadow-sm">
-						<h3 class="text-primary-700 mb-2 text-lg font-bold">Do you deliver?</h3>
-						<p class="text-primary-600">
-							Yes, we offer delivery for orders over $50 within a 10-mile radius. For larger orders
-							or special events, we can arrange delivery further afield.
-						</p>
-					</div>
-					<div class="bg-tertiary-50 rounded-lg p-6 shadow-sm">
-						<h3 class="text-primary-700 mb-2 text-lg font-bold">
-							Can you accommodate allergies or dietary restrictions?
-						</h3>
-						<p class="text-primary-600">
-							We're happy to work with you to accommodate allergies and dietary restrictions
-							whenever possible. Please speak with our team about your specific needs when placing
-							an order.
-						</p>
-					</div>
+					
 				</div>
 			</section>
 		</div>

@@ -32,21 +32,19 @@
 	<header class="from-secondary-200 to-secondary-100 bg-gradient-to-r shadow-md">
 		<nav class="container mx-auto flex items-center justify-between px-4 py-3">
 			<a href="/" class="text-primary-700 text-2xl font-bold">
-				<p class="">
-					<span class="font-mr-de-haviland text-primary-50 pr-3 text-4xl">Soul</span>Sweets
+				<p class="text-primary-50">
+					<span class="font-mr-de-haviland pr-3 text-4xl">Soul</span>Sweets
 				</p></a
 			>
-			<div class="flex gap-6">
-				<a href="/about" class="text-primary-900 hover:text-primary-600">About</a>
+			<div class="flex gap-2 md:gap-6 md:text-lg">
 				<div class="relative" bind:this={dropdownRef}>
-					
 					<button
 						onclick={toggleInfoDropdown}
 						class="text-primary-900 hover:text-primary-600 flex items-center"
 					>
 						<svg
 							class="h-4 w-4 transition-transform"
-							class:rotate-270={isInfoDropdownOpen}
+							class:-rotate-90={isInfoDropdownOpen}
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 20 20"
 							fill="currentColor"
@@ -57,35 +55,38 @@
 								clip-rule="evenodd"
 							/>
 						</svg>
-						Info
+						Menu
 					</button>
 					{#if isInfoDropdownOpen}
 						<div
-							class="ring-opacity-5 bg-primary-50 ring-tertiary-900 absolute left-0 z-50 mt-2 w-48 rounded-md drop-shadow-2xl ring-1"
+							class="ring-opacity-5 bg-primary-50 ring-tertiary-900 absolute left-0 z-50 mt-2 w-48 rounded-md ring-1 drop-shadow-2xl"
 							transition:slide={{ duration: 200 }}
 						>
-							<div class="py-1">
+							<div class="">
 								<a
-									href="/about"
-									onclick={() => isInfoDropdownOpen = false}
-									class="text-primary-900 hover:bg-primary-50 block px-4 py-2 text-sm">About</a
-								>
-								<a 
-									href="/care" 
-									onclick={() => isInfoDropdownOpen = false}
-									class="text-primary-900 hover:bg-primary-50 block px-4 py-2 text-sm"
-									>Care</a
+									href="/cakes"
+									onclick={() => (isInfoDropdownOpen = false)}
+									class="text-primary-900 hover:bg-primary-100 block rounded-t-md px-4 py-2 text-sm"
+									>Cakes</a
 								>
 								<a
-									href="/policy"
-									onclick={() => isInfoDropdownOpen = false}
-									class="text-primary-900 hover:bg-primary-50 block px-4 py-2 text-sm">Policy</a
+									href="/brownies"
+									onclick={() => (isInfoDropdownOpen = false)}
+									class="text-primary-900 hover:bg-primary-100 block px-4 py-2 text-sm">Brownies</a
+								>
+								<a
+									href="/cupcakes"
+									onclick={() => (isInfoDropdownOpen = false)}
+									class="text-primary-900 hover:bg-primary-100 block rounded-b-md px-4 py-2 text-sm"
+									>Cupcakes</a
 								>
 							</div>
 						</div>
 					{/if}
 				</div>
-				<a href="/menu" class="text-primary-900 hover:text-primary-600">Menu</a>
+				<a href="/about" class="text-primary-900 hover:text-primary-600">About</a>
+				<a href="/policy" class="text-primary-900 hover:text-primary-600">Policy</a>
+				<a href="/care" class="text-primary-900 hover:text-primary-600">Care</a>
 				<a href="/contact" class="text-primary-900 hover:text-primary-600">Contact</a>
 			</div>
 		</nav>

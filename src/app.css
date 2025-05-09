@@ -6,19 +6,25 @@
 @import '@fontsource/mr-de-haviland';
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
 
-
-/* [data-theme='rose'] body {
-	background-color: hsla(223, 73%, 97%, 1);
+[data-theme='rose'] body {
+	background-color: hsla(300, 100%, 98%, 1);
 	background-image:
-		radial-gradient(at 82% 18%, hsla(248, 39%, 85%, 1) 0px, transparent 50%),
-		radial-gradient(at 19% 25%, hsla(248, 39%, 85%, 1) 0px, transparent 50%),
-		radial-gradient(at 86% 85%, hsla(249, 39%, 85%, 1) 0px, transparent 50%),
-		radial-gradient(at 10% 85%, hsla(250, 40%, 85%, 1) 0px, transparent 50%);
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-} */
+		radial-gradient(at 80% 53%, hsla(256, 100%, 89%, 1) 0px, transparent 50%),
+		radial-gradient(at 0% 0%, hsla(237, 53%, 91%, 1) 0px, transparent 50%);
+	animation: gradient 20s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
@@ -30,5 +36,5 @@
 } */
 
 .font-mr-de-haviland {
-  font-family: 'Mr De Haviland', cursive;
+	font-family: 'Mr De Haviland', cursive;
 }

@@ -8,6 +8,7 @@
 		Palette,
 		AlertTriangle
 	} from 'lucide-svelte';
+	import { slide } from 'svelte/transition';
 
 	interface Section {
 		title: string;
@@ -94,7 +95,7 @@
 			{#each sections as section}
 				<div class="bg-primary-50 overflow-hidden rounded-lg shadow-md">
 					<button
-						class="hover:bg-secondary-50 flex w-full items-center justify-between px-6 py-4 text-left transition-colors"
+						class="md:hover:bg-secondary-50 flex w-full items-center justify-between px-6 py-4 text-left transition-colors"
 						on:click={() => toggleSection(section)}
 					>
 						<div class="flex items-center gap-2">
@@ -110,10 +111,10 @@
 					</button>
 
 					{#if activeSection === section}
-						<div class="px-6 pb-4">
+						<div class="p-4 px-6" transition:slide={{ duration: 200 }}>
 							<ul class="space-y-3">
 								{#each section.content as item}
-									<li class="text-gray-700">{item}</li>
+									<li class="text-primary-600">{item}</li>
 								{/each}
 							</ul>
 						</div>

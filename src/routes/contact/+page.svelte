@@ -28,7 +28,7 @@
 			<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
 				<!-- Contact Information -->
 				<div>
-					<div class="mb-8 rounded-lg bg-white p-8 shadow-md">
+					<div class="mb-8 rounded-lg bg-tertiary-100 p-8 shadow-md">
 						<h2 class="text-primary-700 mb-6 text-2xl font-bold">Get in Touch</h2>
 						<div class="space-y-4">
 							<div class="flex items-start">
@@ -66,22 +66,21 @@
 					</div>
 
 					<!-- Map Placeholder -->
-					<div class="bg-primary-100 rounded-lg p-4 shadow-md">
-						<div class="bg-primary-200 flex h-64 items-center justify-center rounded">
+					
+						<div class="bg-tertiary-100 flex h-64 items-center justify-center rounded-lg p-4 shadow-md">
 							<div class="p-4 text-center">
-								<div class="mb-2 text-4xl">🗺️</div>
 								<p class="text-primary-800">
-									Map would be embedded here.
+									A helpful reminder could go here
 									<br />
-									Find us at 123 address street
+									Something that annoys you
 								</p>
 							</div>
 						</div>
-					</div>
+					
 				</div>
 
 				<!-- Contact Form -->
-				<div class="rounded-lg bg-white p-8 shadow-md">
+				<div class="rounded-lg bg-tertiary-100 p-8 shadow-md">
 					<h2 class="text-primary-700 mb-6 text-2xl font-bold">Send Us a Message</h2>
 
 					{#if submitted}
