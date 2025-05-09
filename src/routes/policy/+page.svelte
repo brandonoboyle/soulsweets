@@ -142,9 +142,3 @@
 		</div> -->
 	</div>
 </div>
-
-<style>
-	.rotate-180 {
-		transform: rotate(180deg);
-	}
-</style>
