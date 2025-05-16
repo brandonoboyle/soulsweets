@@ -1,0 +1,51 @@
+{
+	"format": "custom",
+	"id": "recent",
+	"label": "recent",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"card": {
+				"type": "Group",
+				"config": {
+					"label": "Card",
+					"repeat": true,
+					"fields": {
+						"item": {
+							"type": "Image",
+							"config": {
+								"label": "item",
+								"constraint": {
+									"width": 1920,
+									"height": 1080
+								},
+								"thumbnails": []
+							}
+						},
+						"description": {
+							"type": "StructuredText",
+							"config": {
+								"label": "description",
+								"placeholder": "",
+								"allowTargetBlank": true,
+								"multi": "paragraph,heading3,heading4,heading5,heading6,strong,em"
+							}
+						},
+						"button_link": {
+							"type": "Link",
+							"config": {
+								"label": "Button Link",
+								"placeholder": "",
+								"select": null,
+								"allowTargetBlank": true,
+								"allowText": true,
+								"repeat": false
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

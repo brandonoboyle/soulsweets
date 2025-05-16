@@ -32,8 +32,8 @@
 	<header class="from-secondary-200 to-secondary-100 bg-gradient-to-r shadow-md">
 		<nav class="container mx-auto flex items-center justify-between px-4 py-3">
 			<a href="/" class="text-primary-700 text-2xl font-bold">
-				<p class="text-primary-50">
-					<span class="font-mr-de-haviland pr-3 text-4xl">Soul</span>Sweets
+				<p class="text-surface-50">
+					<span class="font-mr-de-haviland pr-3 text-4xl text-primary-500">Soul</span>Sweets
 				</p></a
 			>
 			<div class="flex gap-2 md:gap-6 md:text-lg">

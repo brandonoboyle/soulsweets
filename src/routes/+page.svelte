@@ -8,7 +8,7 @@
 	<!-- Hero Section -->
 	<section class="relative">
 		<div
-			class="from-secondary-100 to-secondary-50 flex overflow-hidden rounded-lg bg-gradient-to-r drop-shadow-xl"
+			class="from-secondary-100 to-secondary-50 flex overflow-hidden rounded-3xl bg-gradient-to-r shadow-xl"
 		>
 			<!-- Below is the Carousel div -->
 			<!-- <div class="flex w-1/2 border-2">
@@ -19,7 +19,7 @@
 				</div>
 			</div> -->
 			<div class="container mx-auto flex flex-col items-center px-4 py-20 text-center">
-				<img src={logo} alt="Soul Sweets Logo" class="mb-6 rounded-full" />
+				<img src={logo} alt="Soul Sweets Logo" class="mb-6 rounded-full shadow-xl" />
 				<!-- <h1 class="text-4xl md:text-6xl font-bold text-surface-800 mb-6">Soul Sweets</h1> -->
 				<p class="text-tertiary-900 mb-8 max-w-2xl text-xl">A nice little blurb here maybe</p>
 				<div class="flex flex-col gap-4 sm:flex-row">
@@ -41,7 +41,7 @@
 	</section>
 
 	<!-- Featured Products -->
-	<section>
+	<!-- <section>
 		<div class="container mx-auto">
 			<h2 class="text-primary-900 mb-8 text-center text-3xl font-bold">Dessert Menu</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -63,7 +63,7 @@
 				{/each}
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<!-- About Section -->
 	<!-- <section class="rounded-lg bg-pink-50 py-16 border-2">
@@ -102,7 +102,7 @@
 			<h2 class="text-primary-800 mb-8 text-center text-3xl font-bold">Testimonials?</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 				{#each [{ name: 'Sarah M.', quote: "The best cupcakes I've ever had! Soul Sweets is now my go-to for all celebrations." }, { name: 'John D.', quote: 'Their sourdough bread is amazing. I stop by every weekend to get a fresh loaf.' }] as testimonial}
-					<div class="bg-tertiary-100 rounded-lg p-6" transition:slide>
+					<div class="bg-secondary-100 rounded-lg p-6" transition:slide>
 						<p class="text-primary-700 mb-4 italic">"{testimonial.quote}"</p>
 						<p class="text-primary-800 font-bold">— {testimonial.name}</p>
 					</div>
@@ -116,8 +116,8 @@
 		class="from-secondary-200 to-secondary-100 text-primary-50 rounded-lg bg-gradient-to-r py-12"
 	>
 		<div class="container mx-auto px-4 text-center">
-			<h2 class="mb-4 text-3xl font-bold">Ready to Order?</h2>
-			<p class="mx-auto mb-8 max-w-2xl">
+			<h2 class="mb-4 text-3xl font-bold text-primary-800">Ready to Order?</h2>
+			<p class="mx-auto mb-8 max-w-2xl text-primary-800">
 				Visit our menu or order online for special events and celebrations!
 			</p>
 			<div class="flex flex-col justify-center gap-4 sm:flex-row">
@@ -129,7 +129,7 @@
 				</a>
 				<a
 					href="/menu"
-					class="border-surface-50 text-primary-50 hover:bg-primary-700 rounded-full border-2 bg-transparent px-8 py-3 font-medium transition duration-300"
+					class="border-surface-50 text-primary-800 hover:bg-primary-700 rounded-full border-2 bg-transparent px-8 py-3 font-medium transition duration-300"
 				>
 					Custom Order
 				</a>
