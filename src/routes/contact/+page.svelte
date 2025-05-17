@@ -28,7 +28,7 @@
 			<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
 				<!-- Contact Information -->
 				<div>
-					<div class="mb-8 rounded-lg bg-tertiary-100 p-8 shadow-md">
+					<div class="mb-8 rounded-lg bg-primary-100 p-8 shadow-md">
 						<h2 class="text-primary-700 mb-6 text-2xl font-bold">Get in Touch</h2>
 						<div class="space-y-4">
 							<div class="flex items-start">
@@ -67,7 +67,7 @@
 
 					<!-- Map Placeholder -->
 					
-						<div class="bg-tertiary-100 flex h-64 items-center justify-center rounded-lg p-4 shadow-md">
+						<div class="bg-primary-100 flex h-64 items-center justify-center rounded-lg p-4 shadow-md">
 							<div class="p-4 text-center">
 								<p class="text-primary-800">
 									A helpful reminder could go here
@@ -80,7 +80,7 @@
 				</div>
 
 				<!-- Contact Form -->
-				<div class="rounded-lg bg-tertiary-100 p-8 shadow-md">
+				<div class="rounded-lg bg-primary-100 p-8 shadow-md">
 					<h2 class="text-primary-700 mb-6 text-2xl font-bold">Send Us a Message</h2>
 
 					{#if submitted}
@@ -149,7 +149,7 @@
 
 		<!-- Special Orders Section -->
 		<div class="mx-auto mt-16 max-w-6xl">
-			<div class="rounded-lg bg-pink-50 p-8">
+			<div class="rounded-lg bg-secondary-200 p-8">
 				<h2 class="text-primary-800 mb-4 text-2xl font-bold">Special Orders & Catering</h2>
 				<p class="text-primary-700 mb-4">
 					Looking for custom cakes, catering for an event, or bulk orders? We'd love to help make

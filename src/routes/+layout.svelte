@@ -96,7 +96,7 @@
 		{@render children()}
 	</main>
 
-	<footer class="bg-tertiary-200 p-8">
+	<footer class="from-secondary-200 to-secondary-100 bg-gradient-to-r p-8">
 		<div class="container mx-auto">
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 				<div>

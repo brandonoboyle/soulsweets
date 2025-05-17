@@ -25,13 +25,13 @@
 				<div class="flex flex-col gap-4 sm:flex-row">
 					<a
 						href="/menu"
-						class="bg-primary-600 text-surface-50 hover:bg-primary-700 rounded-full px-8 py-3 font-medium transition duration-300"
+						class="bg-primary-500 text-surface-50 hover:bg-secondary-600 rounded-full px-8 py-3 font-medium transition duration-300"
 					>
 						View Our Menu
 					</a>
 					<a
 						href="/contact"
-						class="bg-surface-50 text-primary-700 border-primary-300 rounded-full border px-8 py-3 font-medium transition duration-300 hover:bg-pink-50"
+						class="bg-surface-50 text-primary-700 border-primary-300 hover:bg-primary-100 rounded-full border px-8 py-3 font-medium transition duration-300"
 					>
 						Personal Order
 					</a>
@@ -102,7 +102,10 @@
 			<h2 class="text-primary-800 mb-8 text-center text-3xl font-bold">Testimonials?</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 				{#each [{ name: 'Sarah M.', quote: "The best cupcakes I've ever had! Soul Sweets is now my go-to for all celebrations." }, { name: 'John D.', quote: 'Their sourdough bread is amazing. I stop by every weekend to get a fresh loaf.' }] as testimonial}
-					<div class="bg-secondary-100 rounded-lg p-6" transition:slide>
+					<div
+						class="from-secondary-200 to-secondary-100 text-tertiary-50 rounded-lg bg-gradient-to-r p-6"
+						transition:slide
+					>
 						<p class="text-primary-700 mb-4 italic">"{testimonial.quote}"</p>
 						<p class="text-primary-800 font-bold">— {testimonial.name}</p>
 					</div>
@@ -113,11 +116,11 @@
 
 	<!-- Call to Action -->
 	<section
-		class="from-secondary-200 to-secondary-100 text-primary-50 rounded-lg bg-gradient-to-r py-12"
+		class="from-secondary-100 to-secondary-50 text-primary-50 rounded-lg bg-gradient-to-r py-12"
 	>
 		<div class="container mx-auto px-4 text-center">
-			<h2 class="mb-4 text-3xl font-bold text-primary-800">Ready to Order?</h2>
-			<p class="mx-auto mb-8 max-w-2xl text-primary-800">
+			<h2 class="text-primary-800 mb-4 text-3xl font-bold">Ready to Order?</h2>
+			<p class="text-primary-800 mx-auto mb-8 max-w-2xl">
 				Visit our menu or order online for special events and celebrations!
 			</p>
 			<div class="flex flex-col justify-center gap-4 sm:flex-row">
@@ -129,7 +132,7 @@
 				</a>
 				<a
 					href="/menu"
-					class="border-surface-50 text-primary-800 hover:bg-primary-700 rounded-full border-2 bg-transparent px-8 py-3 font-medium transition duration-300"
+					class="border-surface-50 text-primary-800 hover:bg-secondary-400 rounded-full border-2 bg-transparent px-8 py-3 font-medium transition duration-300"
 				>
 					Custom Order
 				</a>
@@ -139,71 +142,4 @@
 </div>
 
 <style>
-	/* .carousel {
-		list-style: none;
-		margin: 5rem;
-		padding: 1rem;
-		border: 5px solid white;
-
-		display: grid;
-		gap: 2rem;
-		grid-auto-flow: column;
-		grid-auto-columns: 40%;
-
-		overflow-x: auto;
-		scroll-snap-type: x mandatory;
-
-		@media (prefers-reduced-motion: no-preference) {
-			scroll-behavior: smooth;
-		}
-
-		anchor-name: --carousel;
-
-		scroll-marker-group: after;
-
-		&::scroll-marker-group {
-			display: flex;
-			justify-content: center;
-			gap: 0.5rem;
-			padding: 1rem;
-		}
-
-		> li {
-			scroll-snap-align: center;
-
-			&::scroll-marker {
-				content: ' ';
-				width: 20px;
-				height: 20px;
-				aspect-ratio: 1 / 1;
-				border-radius: 100%;
-				border: 2px solid CanvasText;
-			}
-
-			&::scroll-marker:target-current {
-				background: LinkText;
-			}
-		}
-
-		&::scroll-button(*) {
-			position: fixed;
-			position-anchor: --carousel;
-			margin: 1rem;
-			font: inherit;
-			background: dodgerblue;
-			border: 0;
-			border-radius: 4px;
-			font-weight: 700;
-		}
-
-		&::scroll-button(right) {
-			content: 'right';
-			position-area: center right;
-		}
-
-		&::scroll-button(left) {
-			content: 'left';
-			position-area: center left;
-		}
-	} */
 </style>

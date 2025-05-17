@@ -10,21 +10,9 @@
 [data-theme='soulsweets'] body {
 	background-color: hsla(290, 100%, 98%, 1);
 	background-image:
-		radial-gradient(at 80% 53%, hsla(290, 70%, 90%, 1) 0px, transparent 50%),
-		radial-gradient(at 0% 0%, hsla(300, 60%, 92%, 1) 0px, transparent 50%);
+		radial-gradient(at 80% 53%, hsla(290, 70%, 90%, 1) 0px, transparent 30%),
+		radial-gradient(at 0% 0%, hsla(300, 60%, 92%, 1) 0px, transparent 30%);
 	animation: gradient 20s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }
 
 @plugin '@tailwindcss/forms';
