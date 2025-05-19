@@ -1,13 +1,15 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import logo from '$lib/assets/logo.png';
-	import goodies from '$lib/assets/pics/goodies.png';
 	import type { RecentDocument } from '../prismicio-types';
 	import { PrismicRichText, PrismicImage } from '@prismicio/svelte';
 	import { onMount } from 'svelte';
+	import cakes from '$lib/assets/pics/cakes.jpg';
+	import brownies from '$lib/assets/pics/brownies.jpg';
+	import cupcakes from '$lib/assets/pics/cupcakes.jpg';
 
 	export let data: { recent: RecentDocument };
-	
+
 	let currentIndex = 0;
 	let touchStartX = 0;
 	let touchStartY = 0;
@@ -33,7 +35,8 @@
 
 	function prevSlide() {
 		if (isMobile) {
-			currentIndex = (currentIndex - 1 + data.recent.data.card.length) % data.recent.data.card.length;
+			currentIndex =
+				(currentIndex - 1 + data.recent.data.card.length) % data.recent.data.card.length;
 		} else {
 			currentIndex = Math.max(currentIndex - 3, 0);
 		}
@@ -98,7 +101,7 @@
 				</div>
 			</div> -->
 			<div class="container mx-auto flex flex-col items-center px-4 py-20 text-center">
-				<img src={logo} alt="Soul Sweets Logo" class="mb-6 rounded-full shadow-xl" />
+				<img src={logo} alt="Soul Sweets Logo" class="mb-6 rounded-full" />
 				<!-- <h1 class="text-4xl md:text-6xl font-bold text-surface-800 mb-6">Soul Sweets</h1> -->
 				<p class="text-tertiary-900 mb-8 max-w-2xl text-xl">A nice little blurb here maybe</p>
 				<div class="flex flex-col gap-4 sm:flex-row">
@@ -120,24 +123,112 @@
 	</section>
 
 	<section>
+		<div class="container mx-auto">
+			<h2
+				class="text-primary-800 bg-primary-100 mx-auto mb-8 rounded-full px-6 py-12 text-center text-3xl font-bold shadow-xl md:text-5xl"
+			>
+				<span class="text-primary-500">Cakes</span> &
+				<span class="text-tertiary-500">Desserts</span>
+			</h2>
+			<!-- Cakes -->
+			<div
+				class="bg-secondary-100 mb-16 flex flex-col items-center gap-8 rounded-lg p-8 pt-8 shadow-md md:flex-row"
+			>
+				<div class="md:w-1/2">
+					<img src={cakes} alt="Delicious Cakes" class="rounded-lg shadow-xl" />
+				</div>
+				<div class="space-y-4 px-4 md:w-1/2">
+					<h3 class="text-primary-600 text-3xl font-bold md:text-5xl">Cakes</h3>
+					<p class="text-primary-800 text-xl md:text-2xl">
+						Indulge in our selection of handcrafted cakes, made with love and the finest
+						ingredients. From classic flavors to unique combinations, each cake is a masterpiece
+						waiting to be enjoyed.
+					</p>
+					<a
+						href="/menu"
+						class="text-primary-600 hover:text-primary-700 bg-tertiary-50 inline-block rounded-full px-6 py-2 text-2xl font-medium"
+					>
+						View Cake Menu
+					</a>
+				</div>
+			</div>
+
+			<!-- Brownies -->
+			<div
+				class="bg-tertiary-100 mb-16 flex flex-col items-center gap-8 rounded-lg p-8 shadow-md md:flex-row-reverse"
+			>
+				<div class="md:w-1/2">
+					<img src={brownies} alt="Decadent Brownies" class="rounded-lg shadow-xl" />
+				</div>
+				<div class="space-y-4 px-4 md:w-1/2">
+					<h3 class="text-primary-600 text-3xl font-bold md:text-5xl">Brownies</h3>
+					<p class="text-primary-800 text-xl md:text-2xl">
+						Experience the perfect balance of fudgy and cakey in our signature brownies. Each bite
+						is packed with rich chocolate flavor and topped with premium ingredients.
+					</p>
+					<a
+						href="/menu"
+						class="text-primary-600 hover:text-primary-700 bg-tertiary-50 inline-block rounded-full px-6 py-2 text-2xl font-medium"
+					>
+						View Brownie Menu
+					</a>
+				</div>
+			</div>
+
+			<!-- Cupcakes -->
+			<div
+				class="bg-secondary-100 mb-16 flex flex-col items-center gap-8 rounded-lg p-8 shadow-md md:flex-row"
+			>
+				<div class="md:w-1/2">
+					<img src={cupcakes} alt="Delightful Cupcakes" class="rounded-lg shadow-xl" />
+				</div>
+				<div class="space-y-4 px-4 md:w-1/2">
+					<h3 class="text-primary-600 text-3xl font-bold md:text-5xl">Cupcakes</h3>
+					<p class="text-primary-800 text-xl md:text-2xl">
+						Our cupcakes are miniature works of art, featuring moist cake bases and perfectly piped
+						frosting. Available in a variety of flavors and designs for any occasion.
+					</p>
+					<a
+						href="/menu"
+						class="text-primary-600 hover:text-primary-800 bg-tertiary-50 inline-block rounded-full px-6 py-2 text-2xl font-medium"
+					>
+						View Cupcake Menu
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
 		<!-- Recent Creations -->
 		<div class="container mx-auto">
-			<h2 class="text-primary-800 mb-8 text-center text-3xl font-bold">Recent Creations</h2>
-			<div class="relative">
-				<div 
-					class="overflow-hidden touch-pan-y"
+			<h2
+				class="text-primary-800 bg-primary-100 mx-auto mb-8 rounded-full px-6 py-12 text-center text-3xl font-bold shadow-xl md:text-5xl"
+			>
+				Recent Creations
+			</h2>
+			<div class="relative pt-8">
+				<div
+					class="touch-pan-y overflow-hidden"
 					on:touchstart={handleTouchStart}
 					on:touchmove={handleTouchMove}
 					on:touchend={handleTouchEnd}
 				>
-					<div class="flex transition-transform duration-300 ease-in-out" style="transform: translateX(-{currentIndex * (isMobile ? 100 : 33.333)}%)">
+					<div
+						class="flex transition-transform duration-300 ease-in-out"
+						style="transform: translateX(-{currentIndex * (isMobile ? 100 : 33.333)}%)"
+					>
 						{#each data.recent.data.card as card, i}
-							<div class="w-full md:w-1/3 flex-shrink-0 px-4">
-								<div class="bg-primary-100 flex flex-col rounded-lg p-6 shadow-md transition duration-300 h-full">
-									<div class="bg-secondary-100 text-primary-800 mb-4 flex items-center justify-center rounded overflow-hidden">
-										<PrismicImage field={card.item} class="w-full h-full object-cover" />
+							<div class="w-full flex-shrink-0 px-4 md:w-1/3">
+								<div
+									class="bg-primary-100 flex h-full flex-col rounded-lg p-6 shadow-md transition duration-300"
+								>
+									<div
+										class="bg-secondary-100 text-primary-800 mb-4 flex items-center justify-center overflow-hidden rounded"
+									>
+										<PrismicImage field={card.item} class="h-full w-full object-cover" />
 									</div>
-									<div class="text-primary-800 text-center text-pretty mx-4 flex-grow">
+									<div class="text-primary-800 mx-4 flex-grow text-center text-pretty">
 										<PrismicRichText field={card.description} />
 									</div>
 								</div>
@@ -145,50 +236,40 @@
 						{/each}
 					</div>
 				</div>
-				
+
+				<!-- Navigation Dots -->
+				<div class="mt-4 flex justify-center gap-2 md:hidden">
+					{#each data.recent.data.card as _, i}
+						<button
+							class="h-3 w-3 rounded-full transition-colors duration-300 {currentIndex === i
+								? 'bg-primary-500'
+								: 'bg-primary-200'}"
+							on:click={() => (currentIndex = i)}
+							aria-label="Go to slide {i + 1}"
+						></button>
+					{/each}
+				</div>
+
 				<!-- Navigation Buttons - Hidden on Mobile -->
-				<button 
-					class="absolute left-0 top-1/2 -translate-y-1/2 bg-primary-500 text-white p-2 rounded-full shadow-lg hover:bg-primary-600 transition-colors hidden md:block"
+				<button
+					class="bg-primary-500 hover:bg-primary-600 absolute top-1/2 left-0 hidden -translate-y-1/2 rounded-full p-2 text-white shadow-lg transition-colors md:block"
 					on:click={prevSlide}
 					disabled={currentIndex === 0}
 				>
 					←
 				</button>
-				<button 
-					class="absolute right-0 top-1/2 -translate-y-1/2 bg-primary-500 text-white p-2 rounded-full shadow-lg hover:bg-primary-600 transition-colors hidden md:block"
+				<button
+					class="bg-primary-500 hover:bg-primary-600 absolute top-1/2 right-0 hidden -translate-y-1/2 rounded-full p-2 text-white shadow-lg transition-colors md:block"
 					on:click={nextSlide}
-					disabled={isMobile ? currentIndex === data.recent.data.card.length - 1 : currentIndex >= data.recent.data.card.length - 3}
+					disabled={isMobile
+						? currentIndex === data.recent.data.card.length - 1
+						: currentIndex >= data.recent.data.card.length - 3}
 				>
 					→
 				</button>
 			</div>
 		</div>
 	</section>
-
-	<!-- Featured Products -->
-	<!-- <section>
-		<div class="container mx-auto">
-			<h2 class="text-primary-900 mb-8 text-center text-3xl font-bold">Dessert Menu</h2>
-			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-				{#each [{ name: 'Cakes', desc: 'Extravagant, decadent cakes for every occasion.', img: 'cupcake.jpg' }, { name: 'Cupcakes', desc: 'Wonderful assortments to share', img: 'croissant.jpg' }, { name: 'Brownies', desc: 'Soft, chewy, and delicious made to your liking', img: 'tart.jpg' }] as product}
-					<div
-						class="bg-primary-50 flex flex-col rounded-lg p-6 shadow-md transition duration-300 hover:drop-shadow-xl"
-					>
-						<div
-							class="bg-secondary-50 text-primary-800 mb-4 flex h-52 items-center justify-center rounded"
-						>
-							<span class="text-6xl">🍰</span>
-						</div>
-						<h3 class="text-primary-700 mb-2 text-xl font-bold">{product.name}</h3>
-						<p class="text-primary-600 mb-4 flex-grow">{product.desc}</p>
-						<a href="/menu" class="text-primary-600 hover:text-primary-800 font-medium"
-							>Learn more →</a
-						>
-					</div>
-				{/each}
-			</div>
-		</div>
-	</section> -->
 
 	<!-- About Section -->
 	<!-- <section class="rounded-lg bg-pink-50 py-16 border-2">
@@ -224,9 +305,13 @@
 	<!-- Testimonials -->
 	<section>
 		<div class="container mx-auto">
-			<h2 class="text-primary-800 mb-8 text-center text-3xl font-bold">Testimonials?</h2>
-			<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-				{#each [{ name: 'Sarah M.', quote: "The best cupcakes I've ever had! Soul Sweets is now my go-to for all celebrations." }, { name: 'John D.', quote: 'Their sourdough bread is amazing. I stop by every weekend to get a fresh loaf.' }] as testimonial}
+			<h2
+				class="text-primary-800 bg-primary-100 mx-auto mb-8 rounded-full px-6 py-12 text-center text-3xl font-bold shadow-xl md:text-5xl"
+			>
+				Happy Customers
+			</h2>
+			<div class="grid grid-cols-1 gap-8 pt-8 md:grid-cols-2">
+				{#each [{ name: 'Sarah M.', quote: "The best cupcakes I've ever had! Soul Sweets is now my go-to for all celebrations." }, { name: 'John D.', quote: 'Their brownies are amazing! I would eat them every day if I could.' }] as testimonial}
 					<div
 						class="from-secondary-200 to-secondary-100 text-tertiary-50 rounded-lg bg-gradient-to-r p-6"
 						transition:slide
@@ -241,7 +326,7 @@
 
 	<!-- Call to Action -->
 	<section
-		class="from-secondary-200 to-secondary-50 text-primary-50 rounded-lg bg-gradient-to-r py-12"
+		class="from-secondary-200 to-secondary-100 text-primary-50 rounded-lg bg-gradient-to-r py-12"
 	>
 		<div class="container mx-auto px-4 text-center">
 			<h2 class="text-primary-800 mb-4 text-3xl font-bold">Ready to Order?</h2>
@@ -251,13 +336,13 @@
 			<div class="flex flex-col justify-center gap-4 sm:flex-row">
 				<a
 					href="/contact"
-					class="text-primary-800 hover:bg-primary-100 bg-primary-100 rounded-full px-8 py-3 font-medium transition duration-300"
+					class="text-primary-800 hover:bg-primary-100 bg-primary-300 rounded-full px-8 py-3 font-medium transition duration-300"
 				>
 					View Selection
 				</a>
 				<a
 					href="/menu"
-					class="border-surface-50 text-primary-800 hover:bg-secondary-400 rounded-full border-2 bg-secondary-100 px-8 py-3 font-medium transition duration-300"
+					class="border-surface-50 text-primary-800 hover:bg-secondary-400 bg-secondary-100 rounded-full border-2 px-8 py-3 font-medium transition duration-300"
 				>
 					Custom Order
 				</a>
@@ -265,6 +350,3 @@
 		</div>
 	</section>
 </div>
-
-<style>
-</style>

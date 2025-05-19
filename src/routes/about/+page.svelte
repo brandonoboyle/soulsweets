@@ -19,7 +19,7 @@
 			<section class="mb-16">
 				<h2 class="text-primary-800 mb-6 text-center text-2xl font-bold">Our Values</h2>
 				<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-					<div class="bg-primary-50 rounded-lg p-6">
+					<div class="bg-primary-50 rounded-lg p-6 shadow-md">
 						<div class="text-primary-600 mb-3 text-center text-4xl">🌱</div>
 						<h3 class="text-primary-700 mb-2 text-center text-xl font-bold">Quality Ingredients</h3>
 						<p class="text-primary-600 text-center">
@@ -27,7 +27,7 @@
 							our baked goods taste exceptional.
 						</p>
 					</div>
-					<div class="bg-primary-50 rounded-lg p-6">
+					<div class="bg-primary-50 rounded-lg p-6 shadow-md">
 						<div class="text-primary-600 mb-3 text-center text-4xl">❤️</div>
 						<h3 class="text-primary-700 mb-2 text-center text-xl font-bold">Made with Love</h3>
 						<p class="text-primary-600 text-center">
@@ -35,7 +35,7 @@
 							the difference when food is made with love.
 						</p>
 					</div>
-					<div class="bg-primary-50 rounded-lg p-6">
+					<div class="bg-primary-50 rounded-lg p-6 shadow-md">
 						<div class="text-primary-600 mb-3 text-center text-4xl">🤝</div>
 						<h3 class="text-primary-700 mb-2 text-center text-xl font-bold">Community First</h3>
 						<p class="text-primary-600 text-center">
