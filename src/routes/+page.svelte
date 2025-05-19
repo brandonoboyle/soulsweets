@@ -101,7 +101,7 @@
 				</div>
 			</div> -->
 			<div class="container mx-auto flex flex-col items-center px-4 py-20 text-center">
-				<img src={logo} alt="Soul Sweets Logo" class="mb-6 rounded-full" />
+				<img src={logo} alt="Soul Sweets Logo" class="mb-6 w-1/2 md:w-auto h-auto rounded-full" />
 				<!-- <h1 class="text-4xl md:text-6xl font-bold text-surface-800 mb-6">Soul Sweets</h1> -->
 				<p class="text-tertiary-900 mb-8 max-w-2xl text-3xl">With <span class="font-bold text-primary-700">Kindness</span> & <span class="font-bold text-primary-700">Gratitude</span></p>
 				<div class="flex flex-col gap-4 sm:flex-row">
