@@ -17,8 +17,8 @@
 							"config": {
 								"label": "item",
 								"constraint": {
-									"width": 1920,
-									"height": 1080
+									"width": 585,
+									"height": 585
 								},
 								"thumbnails": []
 							}
