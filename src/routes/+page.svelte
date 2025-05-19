@@ -103,7 +103,7 @@
 			<div class="container mx-auto flex flex-col items-center px-4 py-20 text-center">
 				<img src={logo} alt="Soul Sweets Logo" class="mb-6 rounded-full" />
 				<!-- <h1 class="text-4xl md:text-6xl font-bold text-surface-800 mb-6">Soul Sweets</h1> -->
-				<p class="text-tertiary-900 mb-8 max-w-2xl text-xl">A nice little blurb here maybe</p>
+				<p class="text-tertiary-900 mb-8 max-w-2xl text-3xl">With <span class="font-bold text-primary-700">Kindness</span> & <span class="font-bold text-primary-700">Gratitude</span></p>
 				<div class="flex flex-col gap-4 sm:flex-row">
 					<a
 						href="/menu"
@@ -125,7 +125,7 @@
 	<section>
 		<div class="container mx-auto">
 			<h2
-				class="text-primary-800 bg-primary-100 mx-auto mb-8 rounded-full px-6 py-12 text-center text-3xl font-bold shadow-xl md:text-5xl"
+				class="text-primary-800 bg-secondary-100 mx-auto mb-12 rounded-full px-6 py-12 text-center text-3xl font-bold shadow-xl md:text-5xl"
 			>
 				<span class="text-primary-500">Cakes</span> &
 				<span class="text-tertiary-500">Desserts</span>
@@ -138,7 +138,7 @@
 					<img src={cakes} alt="Delicious Cakes" class="rounded-lg shadow-xl" />
 				</div>
 				<div class="space-y-4 px-4 md:w-1/2">
-					<h3 class="text-primary-600 text-3xl font-bold md:text-5xl">Cakes</h3>
+					<h3 class="text-primary-600 text-3xl font-bold md:text-5xl underline">Cakes</h3>
 					<p class="text-primary-800 text-xl md:text-2xl">
 						Indulge in our selection of handcrafted cakes, made with love and the finest
 						ingredients. From classic flavors to unique combinations, each cake is a masterpiece
@@ -161,7 +161,7 @@
 					<img src={brownies} alt="Decadent Brownies" class="rounded-lg shadow-xl" />
 				</div>
 				<div class="space-y-4 px-4 md:w-1/2">
-					<h3 class="text-primary-600 text-3xl font-bold md:text-5xl">Brownies</h3>
+					<h3 class="text-primary-600 text-3xl font-bold md:text-5xl underline">Brownies</h3>
 					<p class="text-primary-800 text-xl md:text-2xl">
 						Experience the perfect balance of fudgy and cakey in our signature brownies. Each bite
 						is packed with rich chocolate flavor and topped with premium ingredients.
@@ -183,7 +183,7 @@
 					<img src={cupcakes} alt="Delightful Cupcakes" class="rounded-lg shadow-xl" />
 				</div>
 				<div class="space-y-4 px-4 md:w-1/2">
-					<h3 class="text-primary-600 text-3xl font-bold md:text-5xl">Cupcakes</h3>
+					<h3 class="text-primary-600 text-3xl font-bold md:text-5xl underline">Cupcakes</h3>
 					<p class="text-primary-800 text-xl md:text-2xl">
 						Our cupcakes are miniature works of art, featuring moist cake bases and perfectly piped
 						frosting. Available in a variety of flavors and designs for any occasion.
@@ -203,11 +203,11 @@
 		<!-- Recent Creations -->
 		<div class="container mx-auto">
 			<h2
-				class="text-primary-800 bg-primary-100 mx-auto mb-8 rounded-full px-6 py-12 text-center text-3xl font-bold shadow-xl md:text-5xl"
+				class="text-primary-800 bg-secondary-100 mx-auto mb-12 rounded-full px-6 py-12 text-center text-3xl font-bold shadow-xl md:text-5xl"
 			>
 				Recent Creations
 			</h2>
-			<div class="relative pt-8">
+			<div class="relative pt-4">
 				<div
 					class="touch-pan-y overflow-hidden"
 					on:touchstart={handleTouchStart}
@@ -306,7 +306,7 @@
 	<section>
 		<div class="container mx-auto">
 			<h2
-				class="text-primary-800 bg-primary-100 mx-auto mb-8 rounded-full px-6 py-12 text-center text-3xl font-bold shadow-xl md:text-5xl"
+				class="text-primary-800 bg-secondary-100 mx-auto mb-12 rounded-full px-6 py-12 text-center text-3xl font-bold shadow-xl md:text-5xl"
 			>
 				Happy Customers
 			</h2>
@@ -329,7 +329,7 @@
 		class="from-secondary-200 to-secondary-100 text-primary-50 rounded-lg bg-gradient-to-r py-12"
 	>
 		<div class="container mx-auto px-4 text-center">
-			<h2 class="text-primary-800 mb-4 text-3xl font-bold">Ready to Order?</h2>
+			<h2 class="text-primary-800 mb-4 text-4xl font-bold">Ready to Order?</h2>
 			<p class="text-primary-800 mx-auto mb-8 max-w-2xl">
 				Visit our menu or order online for special events and celebrations!
 			</p>

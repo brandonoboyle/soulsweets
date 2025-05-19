@@ -78,9 +78,11 @@
 						onclick={toggleInfoDropdown}
 						class="text-primary-900 hover:text-primary-600 flex items-center"
 					>
+						
+						Menu
 						<svg
-							class="h-4 w-4 transition-transform"
-							class:-rotate-90={isInfoDropdownOpen}
+							class="h-6 w-6 transition-transform"
+							class:rotate-90={isInfoDropdownOpen}
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 20 20"
 							fill="currentColor"
@@ -91,7 +93,6 @@
 								clip-rule="evenodd"
 							/>
 						</svg>
-						Menu
 					</button>
 					{#if isInfoDropdownOpen}
 						<div
@@ -171,12 +172,12 @@
 										e.stopPropagation();
 										toggleInfoDropdown();
 									}}
-									class="text-primary-900 hover:text-primary-600 flex w-full items-center justify-between pl-3 py-1 text-lg"
+									class="text-primary-900 hover:text-primary-600 flex w-full items-center pl-3 py-1 text-lg"
 								>
 									<span>Menu</span>
 									<svg
-										class="h-4 w-4 transition-transform"
-										class:-rotate-90={isInfoDropdownOpen}
+										class="h-6 w-6 transition-transform"
+										class:rotate-90={isInfoDropdownOpen}
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 20 20"
 										fill="currentColor"
