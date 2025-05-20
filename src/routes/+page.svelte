@@ -88,19 +88,97 @@
 </script>
 
 <div class="space-y-16">
+	<section use:fadeIn={{ delay: 400 }}>
+		<!-- Recent Creations -->
+		<div class="container mx-auto">
+			<!-- <h2
+				class="text-secondary-500 bg-secondary-100 mx-auto mb-12 font-marck-script rounded-full px-6 py-4 text-center text-4xl font-bold shadow-lg md:text-7xl"
+			>
+				Recent Creations
+			</h2> -->
+			<div class="relative pt-4">
+				<div
+					class="touch-pan-y overflow-hidden"
+					on:touchstart={handleTouchStart}
+					on:touchmove={handleTouchMove}
+					on:touchend={handleTouchEnd}
+				>
+					<div
+						class="flex transition-transform duration-300 ease-in-out"
+						style="transform: translateX(-{currentIndex * (isMobile ? 100 : 33.333)}%)"
+					>
+						{#each data.recent.data.card as card, i}
+							<div class="w-full flex-shrink-0 px-4 md:w-1/3">
+								<div
+									class="bg-primary-100 flex h-full flex-col rounded-lg p-6 shadow-md transition duration-300"
+								>
+									<div
+										class="bg-secondary-100 text-primary-800 mb-4 flex items-center justify-center overflow-hidden rounded"
+									>
+										<PrismicImage field={card.item} class="h-full w-full object-cover" />
+									</div>
+									<div class="text-primary-800 mx-4 flex-grow text-center text-pretty">
+										<PrismicRichText field={card.description} />
+									</div>
+								</div>
+							</div>
+						{/each}
+					</div>
+				</div>
+
+				<!-- Navigation Dots -->
+				<div class="mt-4 flex justify-center gap-2">
+					{#each data.recent.data.card as _, i}
+						<button
+							class="h-3 w-3 rounded-full transition-colors duration-300 {currentIndex === i
+								? 'bg-primary-500'
+								: 'bg-primary-200'}"
+							on:click={() => (currentIndex = i)}
+							aria-label="Go to slide {i + 1}"
+						></button>
+					{/each}
+				</div>
+
+				<!-- Navigation Buttons - Hidden on Mobile -->
+				<button
+					class="bg-primary-500 hover:bg-primary-600 absolute top-1/2 left-0 hidden -translate-y-1/2 rounded-full p-2 text-white shadow-lg transition-colors md:block"
+					on:click={prevSlide}
+					disabled={currentIndex === 0}
+				>
+					←
+				</button>
+				<button
+					class="bg-primary-500 hover:bg-primary-600 absolute top-1/2 right-0 hidden -translate-y-1/2 rounded-full p-2 text-white shadow-lg transition-colors md:block"
+					on:click={nextSlide}
+					disabled={isMobile
+						? currentIndex === data.recent.data.card.length - 1
+						: currentIndex >= data.recent.data.card.length - 3}
+				>
+					→
+				</button>
+			</div>
+		</div>
+		<div class="flex flex-col items-center justify-center mt-8 gap-4 sm:flex-row">
+			<a
+				href="/menu"
+				class="bg-primary-500 text-surface-50 hover:bg-secondary-600 rounded-full px-8 py-3 font-medium transition duration-300"
+			>
+				View Our Menu
+			</a>
+			<a
+				href="/contact"
+				class="bg-surface-50 text-primary-700 border-primary-300 hover:bg-primary-100 rounded-full border px-8 py-3 font-medium transition duration-300"
+			>
+				Personal Order
+			</a>
+		</div>
+	</section>
+
 	<!-- Hero Section -->
-	<section class="relative" use:fadeIn>
+	<!-- <section class="relative" use:fadeIn>
 		<div
 			class="from-secondary-100 to-secondary-50 flex overflow-hidden rounded-3xl bg-gradient-to-r shadow-xl"
 		>
-			<!-- Below is the Carousel div -->
-			<!-- <div class="flex w-1/2 border-2">
-				<div class="carousel">
-					<li>
-						<img src={goodies} alt="Goodies" />
-					</li>
-				</div>
-			</div> -->
 			<div class="container mx-auto flex flex-col items-center px-4 py-20 text-center">
 				<p class="text-primary-900 text-4xl">
 					<span
@@ -109,7 +187,6 @@
 					> Sweets
 				</p>
 				<img src={logo} alt="Soul Sweets Logo" class="h-1/2 w-1/2 md:h-1/4 md:w-1/4" />
-				<!-- <h1 class="text-4xl md:text-6xl font-bold text-surface-800 mb-6">Soul Sweets</h1> -->
 				<p class="text-tertiary-900 mb-8 max-w-2xl text-xl md:text-2xl">
 					With <span class="text-primary-700 font-bold">Kindness</span> &
 					<span class="text-primary-700 font-bold">Gratitude</span>
@@ -130,7 +207,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<section use:fadeIn={{ delay: 100 }}>
 		<div class="container mx-auto">
@@ -171,7 +248,9 @@
 					<img src={brownies} alt="Decadent Brownies" class="rounded-lg shadow-xl" />
 				</div>
 				<div class="space-y-4 px-4 md:w-1/2">
-					<h3 class="text-primary-600 font-mr-de-haviland text-7xl font-bold md:text-8xl">Brownies</h3>
+					<h3 class="text-primary-600 font-mr-de-haviland text-7xl font-bold md:text-8xl">
+						Brownies
+					</h3>
 					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
 						Experience the perfect balance of fudgy and cakey in our signature brownies. Each bite
 						is packed with rich chocolate flavor and topped with premium ingredients.
@@ -193,7 +272,9 @@
 					<img src={cupcakes} alt="Delightful Cupcakes" class="rounded-lg shadow-xl" />
 				</div>
 				<div class="space-y-4 px-4 md:w-1/2">
-					<h3 class="text-primary-600 font-mr-de-haviland text-7xl font-bold md:text-8xl">Cupcakes</h3>
+					<h3 class="text-primary-600 font-mr-de-haviland text-7xl font-bold md:text-8xl">
+						Cupcakes
+					</h3>
 					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
 						Our cupcakes are miniature works of art, featuring moist cake bases and perfectly piped
 						frosting. Available in a variety of flavors and designs for any occasion.
@@ -213,7 +294,7 @@
 		<!-- Recent Creations -->
 		<div class="container mx-auto">
 			<h2
-				class="text-secondary-500 bg-secondary-100 mx-auto mb-12 font-marck-script rounded-full px-6 py-4 text-center text-4xl font-bold shadow-lg md:text-7xl"
+				class="text-secondary-500 bg-secondary-100 font-marck-script mx-auto mb-12 rounded-full px-6 py-4 text-center text-4xl font-bold shadow-lg md:text-7xl"
 			>
 				Recent Creations
 			</h2>
@@ -316,7 +397,7 @@
 	<section use:fadeIn={{ delay: 600 }}>
 		<div class="container mx-auto">
 			<h2
-				class="text-secondary-500 bg-secondary-100 mx-auto mb-12 font-marck-script rounded-full px-6 py-4 text-center text-4xl font-bold shadow-lg md:text-7xl"
+				class="text-secondary-500 bg-secondary-100 font-marck-script mx-auto mb-12 rounded-full px-6 py-4 text-center text-4xl font-bold shadow-lg md:text-7xl"
 			>
 				Happy Customers
 			</h2>
