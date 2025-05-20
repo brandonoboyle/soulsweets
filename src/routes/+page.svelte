@@ -135,7 +135,7 @@
 	<section use:fadeIn={{ delay: 100 }}>
 		<div class="container mx-auto">
 			<h2
-				class="text-primary-800 bg-secondary-100 font-marck-script mb-12 rounded-full px-6 py-12 text-center text-4xl shadow-lg md:text-7xl"
+				class="text-primary-800 bg-secondary-100 font-marck-script mb-12 rounded-full px-6 py-4 text-center text-4xl shadow-lg md:text-7xl"
 			>
 				<span class="text-primary-500">Cakes</span> &
 				<span class="text-tertiary-500">Desserts</span>
@@ -148,7 +148,7 @@
 					<img src={cakes} alt="Delicious Cakes" class="rounded-lg shadow-xl" />
 				</div>
 				<div class="space-y-2 px-4 md:w-1/2">
-					<h3 class="text-primary-600 font-mr-de-haviland text-5xl md:text-8xl">Cakes</h3>
+					<h3 class="text-primary-600 font-mr-de-haviland text-7xl font-bold md:text-8xl">Cakes</h3>
 					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
 						Indulge in our selection of handcrafted cakes, made with love and the finest
 						ingredients. From classic flavors to unique combinations, each cake is a masterpiece
@@ -171,7 +171,7 @@
 					<img src={brownies} alt="Decadent Brownies" class="rounded-lg shadow-xl" />
 				</div>
 				<div class="space-y-4 px-4 md:w-1/2">
-					<h3 class="text-primary-600 font-mr-de-haviland text-5xl md:text-8xl">Brownies</h3>
+					<h3 class="text-primary-600 font-mr-de-haviland text-7xl font-bold md:text-8xl">Brownies</h3>
 					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
 						Experience the perfect balance of fudgy and cakey in our signature brownies. Each bite
 						is packed with rich chocolate flavor and topped with premium ingredients.
@@ -193,7 +193,7 @@
 					<img src={cupcakes} alt="Delightful Cupcakes" class="rounded-lg shadow-xl" />
 				</div>
 				<div class="space-y-4 px-4 md:w-1/2">
-					<h3 class="text-primary-600 font-mr-de-haviland text-5xl md:text-8xl">Cupcakes</h3>
+					<h3 class="text-primary-600 font-mr-de-haviland text-7xl font-bold md:text-8xl">Cupcakes</h3>
 					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
 						Our cupcakes are miniature works of art, featuring moist cake bases and perfectly piped
 						frosting. Available in a variety of flavors and designs for any occasion.
@@ -213,7 +213,7 @@
 		<!-- Recent Creations -->
 		<div class="container mx-auto">
 			<h2
-				class="text-secondary-500 bg-secondary-100 mx-auto mb-12 font-marck-script rounded-full px-6 py-12 text-center text-4xl font-bold shadow-lg md:text-7xl"
+				class="text-secondary-500 bg-secondary-100 mx-auto mb-12 font-marck-script rounded-full px-6 py-4 text-center text-4xl font-bold shadow-lg md:text-7xl"
 			>
 				Recent Creations
 			</h2>
@@ -316,7 +316,7 @@
 	<section use:fadeIn={{ delay: 600 }}>
 		<div class="container mx-auto">
 			<h2
-				class="text-secondary-500 bg-secondary-100 mx-auto mb-12 font-marck-script rounded-full px-6 py-12 text-center text-4xl font-bold shadow-lg md:text-7xl"
+				class="text-secondary-500 bg-secondary-100 mx-auto mb-12 font-marck-script rounded-full px-6 py-4 text-center text-4xl font-bold shadow-lg md:text-7xl"
 			>
 				Happy Customers
 			</h2>
