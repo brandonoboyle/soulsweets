@@ -38,7 +38,7 @@
 </script>
 
 <div class="flex min-h-screen flex-col">
-	<header class="from-secondary-200 to-secondary-100 bg-gradient-to-r shadow-md">
+	<header class="from-secondary-200 to-secondary-100 bg-gradient-to-r shadow-md sticky top-0 z-40">
 		<nav class="container mx-auto flex items-center justify-between px-4 py-3">
 			<a href="/" class="text-primary-700 text-2xl pl-3 font-bold">
 				<p class="text-surface-50">
