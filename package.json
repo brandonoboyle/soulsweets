@@ -42,6 +42,7 @@
 		"vite": "^6.2.5"
 	},
 	"dependencies": {
+		"@fontsource/marck-script": "^5.2.5",
 		"@fontsource/mr-de-haviland": "^5.2.5",
 		"@fontsource/open-sans": "^5.2.5",
 		"@prismicio/client": "^7.17.2",

@@ -5,14 +5,13 @@
 		Clock,
 		Scissors,
 		Package,
-		MessageSquare,
 		CheckCircle2,
 		AlertCircle
 	} from 'lucide-svelte';
 </script>
 
 <div class="mx-auto max-w-4xl px-4 py-12">
-	<h1 class="text-primary-500 mb-8 text-center text-4xl font-bold">
+	<h1 class="text-primary-500 mb-8 text-center text-4xl underline font-bold">
 		Cake & Dessert Care & Storage Guide
 	</h1>
 
@@ -28,7 +27,7 @@
 				<Truck class="h-8 w-8 text-primary-800" />
 				Transporting Your Cake/Desserts
 			</h2>
-			<ul class="text-primary-900 space-y-4">
+			<ul class="text-primary-900 space-y-4 pl-1">
 				<li class="flex items-start gap-2">
 					<div class="w-6 flex-shrink-0">
 						<CheckCircle2 class="mt-1 h-6 w-6 text-green-500" />
@@ -73,7 +72,7 @@
 				<Refrigerator class="h-8 w-8 text-primary-800" />
 				Storing Your Cake/Desserts
 			</h2>
-			<ul class="text-surface-700 space-y-4">
+			<ul class="text-primary-900 space-y-4 pl-1">
 				<li class="flex items-start gap-2">
 					<div class="w-6 flex-shrink-0">
 						<CheckCircle2 class="mt-1 h-6 w-6 text-green-500" />
@@ -98,7 +97,7 @@
 				<Clock class="h-8 w-8 text-primary-800" />
 				Before Serving
 			</h2>
-			<ul class="text-surface-700 space-y-4">
+			<ul class="text-primary-900 space-y-4 pl-1">
 				<li class="flex items-start gap-2">
 					<div class="w-6 flex-shrink-0">
 						<CheckCircle2 class="mt-1 h-6 w-6 text-green-500" />
@@ -126,7 +125,7 @@
 				<Scissors class="h-8 w-8 text-primary-800" />
 				Cutting Your Cake
 			</h2>
-			<ul class="text-surface-700 space-y-4">
+			<ul class="text-primary-900 space-y-4 pl-1">
 				<li class="flex items-start gap-2">
 					<div class="w-6 flex-shrink-0">
 						<CheckCircle2 class="mt-1 h-6 w-6 text-green-500" />
@@ -157,7 +156,7 @@
 				<Package class="h-8 w-8 text-primary-800" />
 				Storing Leftovers
 			</h2>
-			<ul class="text-surface-700 space-y-4">
+			<ul class="text-primary-900 space-y-4 pl-1">
 				<li class="flex items-start gap-2">
 					<div class="w-6 flex-shrink-0">
 						<CheckCircle2 class="mt-1 h-6 w-6 text-green-500" />
@@ -180,22 +179,5 @@
 				</li>
 			</ul>
 		</section>
-
-		<!-- Feedback Section -->
-		<!-- <section class="bg-white rounded-lg shadow-lg p-8">
-      <h2 class="text-2xl font-semibold mb-6 text-pink-500 flex items-center gap-2">
-        <MessageSquare class="w-8 h-8" />
-        Feedback
-      </h2>
-      <p class="text-gray-700">
-        Your feedback is important to Soul Sweets. If you have suggestions or comments about our sweets or services, I encourage you to share them with me. Your input helps Soul Sweets improve and better serve you in the future.
-      </p>
-    </section> -->
 	</div>
 </div>
-
-<style>
-	:global(body) {
-		background-color: #fdf2f8;
-	}
-</style>

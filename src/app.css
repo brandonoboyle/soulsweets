@@ -5,6 +5,7 @@
 @import './soulsweets.css';
 @import '@fontsource/open-sans';
 @import '@fontsource/mr-de-haviland';
+@import '@fontsource/marck-script';
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
 
 [data-theme='soulsweets'] body {
@@ -26,4 +27,7 @@
 
 .font-mr-de-haviland {
 	font-family: 'Mr De Haviland', cursive;
+}
+.font-marck-script {
+	font-family: 'Marck Script', cursive;
 }

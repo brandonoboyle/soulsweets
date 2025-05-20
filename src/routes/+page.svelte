@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
-	import logo from '$lib/assets/logo.png';
+	import logo from '$lib/assets/image.png';
 	import type { RecentDocument } from '../prismicio-types';
 	import { PrismicRichText, PrismicImage } from '@prismicio/svelte';
 	import { onMount } from 'svelte';
 	import cakes from '$lib/assets/pics/cakes.jpg';
 	import brownies from '$lib/assets/pics/brownies.jpg';
 	import cupcakes from '$lib/assets/pics/cupcakes.jpg';
+	import { fadeIn } from '$lib/actions/fadeIn';
 
 	export let data: { recent: RecentDocument };
 
@@ -88,7 +89,7 @@
 
 <div class="space-y-16">
 	<!-- Hero Section -->
-	<section class="relative">
+	<section class="relative" use:fadeIn>
 		<div
 			class="from-secondary-100 to-secondary-50 flex overflow-hidden rounded-3xl bg-gradient-to-r shadow-xl"
 		>
@@ -101,9 +102,18 @@
 				</div>
 			</div> -->
 			<div class="container mx-auto flex flex-col items-center px-4 py-20 text-center">
-				<img src={logo} alt="Soul Sweets Logo" class="mb-6 w-1/2 md:w-auto h-auto rounded-full" />
+				<p class="text-primary-900 text-4xl">
+					<span
+						class="font-mr-de-haviland text-secondary-400 pr-3 text-6xl font-bold md:font-normal"
+						>Soul</span
+					> Sweets
+				</p>
+				<img src={logo} alt="Soul Sweets Logo" class="h-1/2 w-1/2 md:h-1/4 md:w-1/4" />
 				<!-- <h1 class="text-4xl md:text-6xl font-bold text-surface-800 mb-6">Soul Sweets</h1> -->
-				<p class="text-tertiary-900 mb-8 max-w-2xl text-3xl">With <span class="font-bold text-primary-700">Kindness</span> & <span class="font-bold text-primary-700">Gratitude</span></p>
+				<p class="text-tertiary-900 mb-8 max-w-2xl text-xl md:text-2xl">
+					With <span class="text-primary-700 font-bold">Kindness</span> &
+					<span class="text-primary-700 font-bold">Gratitude</span>
+				</p>
 				<div class="flex flex-col gap-4 sm:flex-row">
 					<a
 						href="/menu"
@@ -122,10 +132,10 @@
 		</div>
 	</section>
 
-	<section>
+	<section use:fadeIn={{ delay: 100 }}>
 		<div class="container mx-auto">
 			<h2
-				class="text-primary-800 bg-secondary-100 mx-auto mb-12 rounded-full px-6 py-12 text-center text-3xl font-bold shadow-xl md:text-5xl"
+				class="text-primary-800 bg-secondary-100 font-marck-script mb-12 rounded-full px-6 py-12 text-center text-4xl shadow-lg md:text-7xl"
 			>
 				<span class="text-primary-500">Cakes</span> &
 				<span class="text-tertiary-500">Desserts</span>
@@ -137,16 +147,16 @@
 				<div class="md:w-1/2">
 					<img src={cakes} alt="Delicious Cakes" class="rounded-lg shadow-xl" />
 				</div>
-				<div class="space-y-4 px-4 md:w-1/2">
-					<h3 class="text-primary-600 text-3xl font-bold md:text-5xl underline">Cakes</h3>
-					<p class="text-primary-800 text-xl md:text-2xl">
+				<div class="space-y-2 px-4 md:w-1/2">
+					<h3 class="text-primary-600 font-mr-de-haviland text-5xl md:text-8xl">Cakes</h3>
+					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
 						Indulge in our selection of handcrafted cakes, made with love and the finest
 						ingredients. From classic flavors to unique combinations, each cake is a masterpiece
 						waiting to be enjoyed.
 					</p>
 					<a
 						href="/menu"
-						class="text-primary-600 hover:text-primary-700 bg-tertiary-50 inline-block rounded-full px-6 py-2 text-2xl font-medium"
+						class="text-primary-600 hover:text-primary-700 bg-tertiary-50 inline-block rounded-full px-6 py-2 text-2xl font-medium shadow-md"
 					>
 						View Cake Menu
 					</a>
@@ -161,8 +171,8 @@
 					<img src={brownies} alt="Decadent Brownies" class="rounded-lg shadow-xl" />
 				</div>
 				<div class="space-y-4 px-4 md:w-1/2">
-					<h3 class="text-primary-600 text-3xl font-bold md:text-5xl underline">Brownies</h3>
-					<p class="text-primary-800 text-xl md:text-2xl">
+					<h3 class="text-primary-600 font-mr-de-haviland text-5xl md:text-8xl">Brownies</h3>
+					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
 						Experience the perfect balance of fudgy and cakey in our signature brownies. Each bite
 						is packed with rich chocolate flavor and topped with premium ingredients.
 					</p>
@@ -183,8 +193,8 @@
 					<img src={cupcakes} alt="Delightful Cupcakes" class="rounded-lg shadow-xl" />
 				</div>
 				<div class="space-y-4 px-4 md:w-1/2">
-					<h3 class="text-primary-600 text-3xl font-bold md:text-5xl underline">Cupcakes</h3>
-					<p class="text-primary-800 text-xl md:text-2xl">
+					<h3 class="text-primary-600 font-mr-de-haviland text-5xl md:text-8xl">Cupcakes</h3>
+					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
 						Our cupcakes are miniature works of art, featuring moist cake bases and perfectly piped
 						frosting. Available in a variety of flavors and designs for any occasion.
 					</p>
@@ -199,11 +209,11 @@
 		</div>
 	</section>
 
-	<section>
+	<section use:fadeIn={{ delay: 400 }}>
 		<!-- Recent Creations -->
 		<div class="container mx-auto">
 			<h2
-				class="text-primary-800 bg-secondary-100 mx-auto mb-12 rounded-full px-6 py-12 text-center text-3xl font-bold shadow-xl md:text-5xl"
+				class="text-secondary-500 bg-secondary-100 mx-auto mb-12 font-marck-script rounded-full px-6 py-12 text-center text-4xl font-bold shadow-lg md:text-7xl"
 			>
 				Recent Creations
 			</h2>
@@ -303,17 +313,17 @@
 	</section> -->
 
 	<!-- Testimonials -->
-	<section>
+	<section use:fadeIn={{ delay: 600 }}>
 		<div class="container mx-auto">
 			<h2
-				class="text-primary-800 bg-secondary-100 mx-auto mb-12 rounded-full px-6 py-12 text-center text-3xl font-bold shadow-xl md:text-5xl"
+				class="text-secondary-500 bg-secondary-100 mx-auto mb-12 font-marck-script rounded-full px-6 py-12 text-center text-4xl font-bold shadow-lg md:text-7xl"
 			>
 				Happy Customers
 			</h2>
 			<div class="grid grid-cols-1 gap-8 pt-8 md:grid-cols-2">
 				{#each [{ name: 'Sarah M.', quote: "The best cupcakes I've ever had! Soul Sweets is now my go-to for all celebrations." }, { name: 'John D.', quote: 'Their brownies are amazing! I would eat them every day if I could.' }] as testimonial}
 					<div
-						class="from-secondary-200 to-secondary-100 text-tertiary-50 rounded-lg bg-gradient-to-r p-6"
+						class="from-secondary-200 to-secondary-100 text-tertiary-50 rounded-lg bg-gradient-to-r p-6 shadow-md"
 						transition:slide
 					>
 						<p class="text-primary-700 mb-4 italic">"{testimonial.quote}"</p>
@@ -326,7 +336,8 @@
 
 	<!-- Call to Action -->
 	<section
-		class="from-secondary-200 to-secondary-100 text-primary-50 rounded-lg bg-gradient-to-r py-12"
+		class="from-secondary-200 to-secondary-100 text-primary-50 rounded-lg bg-gradient-to-r py-12 shadow-lg"
+		use:fadeIn={{ delay: 700 }}
 	>
 		<div class="container mx-auto px-4 text-center">
 			<h2 class="text-primary-800 mb-4 text-4xl font-bold">Ready to Order?</h2>

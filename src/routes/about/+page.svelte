@@ -5,7 +5,7 @@
 
 			<!-- Our Story Section -->
 			<section class="mb-16">
-				<div class="bg-tertiary-50 rounded-lg p-8 shadow-md">
+				<div class="bg-tertiary-50 rounded-lg p-8 shadow-sm">
 					<h2 class="text-primary-700 mb-4 text-2xl font-bold">Our Story</h2>
 					<div class="prose prose-primary max-w-none">
 						<p>
