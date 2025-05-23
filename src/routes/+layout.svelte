@@ -65,10 +65,10 @@
 			</button>
 			<a
 				href="/"
-				class="text-primary-700 absolute left-1/2 -translate-x-1/2 transform text-3xl font-bold"
+				class="text-primary-700 absolute left-1/2 -translate-x-1/2 transform text-4xl font-bold"
 			>
 				<p class="text-surface-50">
-					<span class="font-mr-de-haviland text-primary-500 pr-3 text-6xl">Soul</span>Sweets
+					<span class="font-mr-de-haviland text-primary-500 pr-3 text-5xl">Soul</span>Sweets
 				</p>
 			</a>
 			<div class="w-10"></div>
