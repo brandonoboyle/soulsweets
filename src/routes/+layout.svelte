@@ -144,7 +144,7 @@
 										class="bg-secondary-100 mt-2 overflow-hidden rounded-md"
 									>
 										<a
-											href="/cakes"
+											href="/order"
 											onclick={() => {
 												isInfoDropdownOpen = false;
 												isMobileMenuOpen = false;
@@ -153,7 +153,7 @@
 											>Cakes</a
 										>
 										<a
-											href="/brownies"
+											href="/order"
 											onclick={() => {
 												isInfoDropdownOpen = false;
 												isMobileMenuOpen = false;
@@ -162,7 +162,7 @@
 											>Brownies</a
 										>
 										<a
-											href="/cupcakes"
+											href="/order"
 											onclick={() => {
 												isInfoDropdownOpen = false;
 												isMobileMenuOpen = false;
