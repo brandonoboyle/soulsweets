@@ -6,9 +6,9 @@
 			<!-- Our Story Section -->
 			<section class="mb-16">
 				<div class="bg-tertiary-50 rounded-lg p-8 shadow-sm">
-					<h2 class="text-primary-700 mb-4 text-2xl font-bold">Our Story</h2>
+					<h2 class="text-primary-700 mb-2 text-center text-xl font-bold">Our Story</h2>
 					<div class="prose prose-primary max-w-none">
-						<p>
+						<p class="text-primary-600 text-center">
 							Maybe put a blurb here if you want or we can move it close to the bottom of the page
 						</p>
 					</div>
@@ -68,7 +68,6 @@
 							designs or wedding cakes, please contact us at least two weeks ahead.
 						</p>
 					</div>
-					
 				</div>
 			</section>
 		</div>

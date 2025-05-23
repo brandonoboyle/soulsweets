@@ -63,7 +63,10 @@
 					/>
 				</svg>
 			</button>
-			<a href="/" class="text-primary-700 text-3xl font-bold absolute left-1/2 transform -translate-x-1/2">
+			<a
+				href="/"
+				class="text-primary-700 absolute left-1/2 -translate-x-1/2 transform text-3xl font-bold"
+			>
 				<p class="text-surface-50">
 					<span class="font-mr-de-haviland text-primary-500 pr-3 text-6xl">Soul</span>Sweets
 				</p>
@@ -73,20 +76,13 @@
 			{#if isMobileMenuOpen}
 				<div
 					bind:this={mobileMenuRef}
-					class="bg-secondary-200 fixed inset-0 z-50"
+					class="bg-secondary-200/95 fixed inset-x-0 top-0 z-50 backdrop-blur-sm"
 					transition:slide={{ duration: 200 }}
 				>
-					<div class="flex h-full flex-col">
-						<div class="flex justify-between">
-							<h1 class="text-primary-700 pl-3 font-bold">
-							<a href="/" class="">
-								<p class="text-surface-50">
-									<span class="font-mr-de-haviland text-primary-500 pr-3">Soul</span>Sweets
-								</p>
-							</a>
-							</h1>
+					<div class="flex flex-col max-h-[80vh] overflow-y-auto">
+						<div class="border-primary-200/20 flex items-center justify-between border-b p-6">
 							<button
-								class="text-primary-900 hover:text-primary-600"
+								class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 rounded-full p-2 transition-colors"
 								onclick={(e) => {
 									e.stopPropagation();
 									toggleMobileMenu();
@@ -94,7 +90,7 @@
 								aria-label="Close menu"
 							>
 								<svg
-									class="h-6 w-6"
+									class="h-8 w-8"
 									fill="none"
 									stroke="currentColor"
 									viewBox="0 0 24 24"
@@ -108,19 +104,28 @@
 									/>
 								</svg>
 							</button>
+							<h1 class="text-primary-700 font-bold">
+								<a href="/" class="transition-opacity hover:opacity-80">
+									<p class="text-surface-50 text-4xl">
+										<span class="font-mr-de-haviland text-primary-500 pr-3 text-5xl">Soul</span
+										>Sweets
+									</p>
+								</a>
+							</h1>
+							<div class="w-8"></div>
 						</div>
-						<nav class="flex flex-col p-4">
-							<div class="">
+						<nav class="flex flex-col space-y-2 px-6">
+							<div class="bg-secondary-100/50 rounded-lg px-1">
 								<button
 									onclick={(e) => {
 										e.stopPropagation();
 										toggleInfoDropdown();
 									}}
-									class="text-primary-900 hover:text-primary-600 flex w-full items-center py-1 pl-3 text-lg"
+									class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 flex w-full items-center rounded-md px-3 py-2 text-lg transition-colors"
 								>
 									<span>Menu</span>
 									<svg
-										class="h-6 w-6 transition-transform"
+										class="h-6 w-6 transition-transform duration-200"
 										class:rotate-90={isInfoDropdownOpen}
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 20 20"
@@ -134,14 +139,18 @@
 									</svg>
 								</button>
 								{#if isInfoDropdownOpen}
-									<div bind:this={dropdownRef} class="bg-secondary-100 rounded-md pl-4">
+									<div
+										bind:this={dropdownRef}
+										class="bg-secondary-100 mt-2 overflow-hidden rounded-md"
+									>
 										<a
 											href="/cakes"
 											onclick={() => {
 												isInfoDropdownOpen = false;
 												isMobileMenuOpen = false;
 											}}
-											class="text-primary-900 hover:text-primary-600 block py-2 text-lg">Cakes</a
+											class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 block px-4 py-3 text-lg transition-colors"
+											>Cakes</a
 										>
 										<a
 											href="/brownies"
@@ -149,7 +158,8 @@
 												isInfoDropdownOpen = false;
 												isMobileMenuOpen = false;
 											}}
-											class="text-primary-900 hover:text-primary-600 block py-2 text-lg">Brownies</a
+											class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 block px-4 py-3 text-lg transition-colors"
+											>Brownies</a
 										>
 										<a
 											href="/cupcakes"
@@ -157,31 +167,36 @@
 												isInfoDropdownOpen = false;
 												isMobileMenuOpen = false;
 											}}
-											class="text-primary-900 hover:text-primary-600 block py-2 text-lg">Cupcakes</a
+											class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 block px-4 py-3 text-lg transition-colors"
+											>Cupcakes</a
 										>
 									</div>
 								{/if}
 							</div>
-							<div class="flex flex-col pl-3">
+							<div class="flex flex-col space-y-2">
 								<a
 									href="/about"
 									onclick={() => (isMobileMenuOpen = false)}
-									class="text-primary-900 hover:text-primary-600 py-2 text-lg">About</a
+									class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 rounded-md px-4 py-3 text-lg transition-colors"
+									>About</a
 								>
 								<a
 									href="/policy"
 									onclick={() => (isMobileMenuOpen = false)}
-									class="text-primary-900 hover:text-primary-600 py-2 text-lg">Policy</a
+									class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 rounded-md px-4 py-3 text-lg transition-colors"
+									>Policy</a
 								>
 								<a
 									href="/care"
 									onclick={() => (isMobileMenuOpen = false)}
-									class="text-primary-900 hover:text-primary-600 py-2 text-lg">Care</a
+									class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 rounded-md px-4 py-3 text-lg transition-colors"
+									>Care</a
 								>
 								<a
 									href="/contact"
 									onclick={() => (isMobileMenuOpen = false)}
-									class="text-primary-900 hover:text-primary-600 py-2 text-lg">Contact</a
+									class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 rounded-md px-4 py-3 text-lg transition-colors"
+									>Contact</a
 								>
 							</div>
 						</nav>

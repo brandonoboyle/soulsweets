@@ -91,11 +91,6 @@
 	<section use:fadeIn={{ delay: 400 }}>
 		<!-- Recent Creations -->
 		<div class="container mx-auto">
-			<!-- <h2
-				class="text-secondary-500 bg-secondary-100 mx-auto mb-12 font-marck-script rounded-full px-6 py-4 text-center text-4xl font-bold shadow-lg md:text-7xl"
-			>
-				Recent Creations
-			</h2> -->
 			<div class="relative pt-4">
 				<div
 					class="touch-pan-y overflow-hidden"
@@ -158,7 +153,7 @@
 				</button>
 			</div>
 		</div>
-		<div class="flex flex-col items-center justify-center mt-8 gap-4 sm:flex-row">
+		<!-- <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
 			<a
 				href="/menu"
 				class="bg-primary-500 text-surface-50 hover:bg-secondary-600 rounded-full px-8 py-3 font-medium transition duration-300"
@@ -171,7 +166,7 @@
 			>
 				Personal Order
 			</a>
-		</div>
+		</div> -->
 	</section>
 
 	<!-- Hero Section -->
@@ -209,7 +204,7 @@
 		</div>
 	</section> -->
 
-	<section use:fadeIn={{ delay: 100 }}>
+	<section>
 		<div class="container mx-auto">
 			<h2
 				class="text-primary-800 bg-secondary-100 font-marck-script mb-12 rounded-full px-6 py-4 text-center text-4xl shadow-lg md:text-7xl"
@@ -232,10 +227,10 @@
 						waiting to be enjoyed.
 					</p>
 					<a
-						href="/menu"
+						href="/order"
 						class="text-primary-600 hover:text-primary-700 bg-tertiary-50 inline-block rounded-full px-6 py-2 text-2xl font-medium shadow-md"
 					>
-						View Cake Menu
+						View Order Form
 					</a>
 				</div>
 			</div>
@@ -256,10 +251,10 @@
 						is packed with rich chocolate flavor and topped with premium ingredients.
 					</p>
 					<a
-						href="/menu"
+						href="/order"
 						class="text-primary-600 hover:text-primary-700 bg-tertiary-50 inline-block rounded-full px-6 py-2 text-2xl font-medium"
 					>
-						View Brownie Menu
+						View Order Form
 					</a>
 				</div>
 			</div>
@@ -280,84 +275,12 @@
 						frosting. Available in a variety of flavors and designs for any occasion.
 					</p>
 					<a
-						href="/menu"
+						href="/order"
 						class="text-primary-600 hover:text-primary-800 bg-tertiary-50 inline-block rounded-full px-6 py-2 text-2xl font-medium"
 					>
-						View Cupcake Menu
+						View Order Form
 					</a>
 				</div>
-			</div>
-		</div>
-	</section>
-
-	<section use:fadeIn={{ delay: 400 }}>
-		<!-- Recent Creations -->
-		<div class="container mx-auto">
-			<h2
-				class="text-secondary-500 bg-secondary-100 font-marck-script mx-auto mb-12 rounded-full px-6 py-4 text-center text-4xl font-bold shadow-lg md:text-7xl"
-			>
-				Recent Creations
-			</h2>
-			<div class="relative pt-4">
-				<div
-					class="touch-pan-y overflow-hidden"
-					on:touchstart={handleTouchStart}
-					on:touchmove={handleTouchMove}
-					on:touchend={handleTouchEnd}
-				>
-					<div
-						class="flex transition-transform duration-300 ease-in-out"
-						style="transform: translateX(-{currentIndex * (isMobile ? 100 : 33.333)}%)"
-					>
-						{#each data.recent.data.card as card, i}
-							<div class="w-full flex-shrink-0 px-4 md:w-1/3">
-								<div
-									class="bg-primary-100 flex h-full flex-col rounded-lg p-6 shadow-md transition duration-300"
-								>
-									<div
-										class="bg-secondary-100 text-primary-800 mb-4 flex items-center justify-center overflow-hidden rounded"
-									>
-										<PrismicImage field={card.item} class="h-full w-full object-cover" />
-									</div>
-									<div class="text-primary-800 mx-4 flex-grow text-center text-pretty">
-										<PrismicRichText field={card.description} />
-									</div>
-								</div>
-							</div>
-						{/each}
-					</div>
-				</div>
-
-				<!-- Navigation Dots -->
-				<div class="mt-4 flex justify-center gap-2 md:hidden">
-					{#each data.recent.data.card as _, i}
-						<button
-							class="h-3 w-3 rounded-full transition-colors duration-300 {currentIndex === i
-								? 'bg-primary-500'
-								: 'bg-primary-200'}"
-							on:click={() => (currentIndex = i)}
-							aria-label="Go to slide {i + 1}"
-						></button>
-					{/each}
-				</div>
-
-				<!-- Navigation Buttons - Hidden on Mobile -->
-				<button
-					class="bg-primary-500 hover:bg-primary-600 absolute top-1/2 left-0 hidden -translate-y-1/2 rounded-full p-2 text-white shadow-lg transition-colors md:block"
-					on:click={prevSlide}
-					disabled={currentIndex === 0}
-				>
-					←
-				</button>
-				<button
-					class="bg-primary-500 hover:bg-primary-600 absolute top-1/2 right-0 hidden -translate-y-1/2 rounded-full p-2 text-white shadow-lg transition-colors md:block"
-					on:click={nextSlide}
-					disabled={isMobile
-						? currentIndex === data.recent.data.card.length - 1
-						: currentIndex >= data.recent.data.card.length - 3}
-				>
-					→
-				</button>
 			</div>
 		</div>
 	</section>
@@ -416,7 +339,7 @@
 	</section>
 
 	<!-- Call to Action -->
-	<section
+	<!-- <section
 		class="from-secondary-200 to-secondary-100 text-primary-50 rounded-lg bg-gradient-to-r py-12 shadow-lg"
 		use:fadeIn={{ delay: 700 }}
 	>
@@ -440,5 +363,5 @@
 				</a>
 			</div>
 		</div>
-	</section>
+	</section> -->
 </div>
