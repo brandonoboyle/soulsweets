@@ -247,7 +247,7 @@
 						Brownies
 					</h3>
 					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
-						Experience the perfect balance of fudgy and cakey in our signature brownies. Each bite
+						Experience the the perfect balance of fudgy and cakey in our signature brownies. Each bite
 						is packed with rich chocolate flavor and topped with premium ingredients.
 					</p>
 					<a
