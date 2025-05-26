@@ -2,6 +2,7 @@
 	import { slide } from 'svelte/transition';
 	import logo from '$lib/assets/image.png';
 	import type { RecentDocument } from '../prismicio-types';
+	import type { ReviewDocument } from '../prismicio-types';
 	import { PrismicRichText, PrismicImage } from '@prismicio/svelte';
 	import { onMount } from 'svelte';
 	import cakes from '$lib/assets/pics/cakes.jpg';
@@ -9,9 +10,10 @@
 	import cupcakes from '$lib/assets/pics/cupcakes.jpg';
 	import { fadeIn } from '$lib/actions/fadeIn';
 
-	export let data: { recent: RecentDocument };
+	export let data: { recent: RecentDocument; reviews: ReviewDocument[] };
 
 	let currentIndex = 0;
+	let reviewsIndex = 0;
 	let touchStartX = 0;
 	let touchStartY = 0;
 	let touchEndX = 0;
@@ -43,7 +45,24 @@
 		}
 	}
 
-	function handleTouchStart(e: TouchEvent) {
+	function nextReviewSlide() {
+		if (isMobile) {
+			reviewsIndex = (reviewsIndex + 1) % data.reviews[0].data.review.length;
+		} else {
+			reviewsIndex = Math.min(reviewsIndex + 2, data.reviews[0].data.review.length - 2);
+		}
+	}
+
+	function prevReviewSlide() {
+		if (isMobile) {
+			reviewsIndex =
+				(reviewsIndex - 1 + data.reviews[0].data.review.length) % data.reviews[0].data.review.length;
+		} else {
+			reviewsIndex = Math.max(reviewsIndex - 2, 0);
+		}
+	}
+
+	function handleTouchStart(e: TouchEvent, target: 'recent' | 'reviews') {
 		touchStartX = e.touches[0].clientX;
 		touchStartY = e.touches[0].clientY;
 		isSwiping = false;
@@ -64,14 +83,14 @@
 		}
 	}
 
-	function handleTouchEnd(e: TouchEvent) {
+	function handleTouchEnd(e: TouchEvent, target: 'recent' | 'reviews') {
 		touchEndX = e.changedTouches[0].clientX;
 		touchEndY = e.changedTouches[0].clientY;
-		handleSwipe();
+		handleSwipe(target);
 		isSwiping = false;
 	}
 
-	function handleSwipe() {
+	function handleSwipe(target: 'recent' | 'reviews') {
 		const swipeThreshold = 50;
 		const diffX = touchStartX - touchEndX;
 		const diffY = Math.abs(touchStartY - touchEndY);
@@ -79,9 +98,17 @@
 		// Only trigger swipe if the movement is more horizontal than vertical
 		if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > diffY) {
 			if (diffX > 0) {
-				nextSlide();
+				if (target === 'recent') {
+					nextSlide();
+				} else {
+					nextReviewSlide();
+				}
 			} else {
-				prevSlide();
+				if (target === 'recent') {
+					prevSlide();
+				} else {
+					prevReviewSlide();
+				}
 			}
 		}
 	}
@@ -99,9 +126,9 @@
 			<div class="relative pt-4">
 				<div
 					class="touch-pan-y overflow-hidden"
-					on:touchstart={handleTouchStart}
+					on:touchstart={(e) => handleTouchStart(e, 'recent')}
 					on:touchmove={handleTouchMove}
-					on:touchend={handleTouchEnd}
+					on:touchend={(e) => handleTouchEnd(e, 'recent')}
 				>
 					<div
 						class="flex transition-transform duration-300 ease-in-out"
@@ -267,20 +294,20 @@
 				</div>
 				<div class="space-y-4 md:w-1/2">
 					<h2 class="text-primary-800 text-3xl font-bold">
-						I’m Kiara Marfurt-Breakenridge, the creator of Soul Sweets bakery.
+						I'm Kiara Marfurt-Breakenridge, the creator of Soul Sweets bakery.
 					</h2>
 					<p class="text-primary-700">
 						Growing up and even now, the kitchen has always been the heart of everything In my
 						family. Cooking and baking is how we show love, celebrate, and spend time together.
 					</p>
 					<p class="text-primary-700">
-						For as long as I can remember I’ve been drawn to baking, my mum says I got it from my
+						For as long as I can remember I've been drawn to baking, my mum says I got it from my
 						grandfather, who once owned a bakery in Old Montreal. I never got the chance to meet
-						him, but I like to think I carry a small part of him with me, especially when I’m in the
+						him, but I like to think I carry a small part of him with me, especially when I'm in the
 						kitchen.
 					</p>
 					<p class="text-primary-700">
-						No matter what paths I’ve taken in life I always find myself coming back to baking, It’s
+						No matter what paths I've taken in life I always find myself coming back to baking, It's
 						what I truly love to do. In November 2023, I decided to start Soul Sweets a home based
 						bakery in Russell, Ontario where I specialize in cakes, cupcakes, brownies, and other
 						sweet treats. Everything is made fresh, using quality ingredients and a whole lot of
@@ -305,16 +332,63 @@
 			>
 				Happy Customers
 			</h2>
-			<div class="grid grid-cols-1 gap-8 pt-8 md:grid-cols-2">
-				{#each [{ name: 'Sarah M.', quote: "The best cupcakes I've ever had! Soul Sweets is now my go-to for all celebrations." }, { name: 'John D.', quote: 'Their brownies are amazing! I would eat them every day if I could.' }] as testimonial}
+			<div class="relative pt-4">
+				<div
+					class="touch-pan-y overflow-hidden"
+					on:touchstart={(e) => handleTouchStart(e, 'reviews')}
+					on:touchmove={handleTouchMove}
+					on:touchend={(e) => handleTouchEnd(e, 'reviews')}
+				>
 					<div
-						class="from-secondary-200 to-secondary-100 text-tertiary-50 rounded-lg bg-gradient-to-r p-6 shadow-md"
-						transition:slide
+						class="flex transition-transform duration-300 ease-in-out"
+						style="transform: translateX(-{reviewsIndex * (isMobile ? 100 : 50)}%)"
 					>
-						<p class="text-primary-700 mb-4 italic">"{testimonial.quote}"</p>
-						<p class="text-primary-800 font-bold">— {testimonial.name}</p>
+						{#if data.reviews && data.reviews[0]?.data?.review}
+							{#each data.reviews[0].data.review as review, i}
+								<div class="w-full flex-shrink-0 px-4 md:w-1/2">
+									<div
+										class="from-secondary-200 to-secondary-100 text-tertiary-50 rounded-lg bg-gradient-to-r p-6 shadow-md"
+										transition:slide
+									>
+										<div class="text-primary-800 mb-4 text-xl font-bold underline"><PrismicRichText field={review.name} /></div>
+										<div class="text-primary-700 italic"><PrismicRichText field={review.quote} /></div>
+									</div>
+								</div>
+							{/each}
+						{/if}
 					</div>
-				{/each}
+				</div>
+
+				<!-- Navigation Dots -->
+				<div class="mt-4 flex justify-center gap-2">
+					{#each data.reviews[0].data.review as _, i}
+						<button
+							class="h-3 w-3 rounded-full transition-colors duration-300 {reviewsIndex === i
+								? 'bg-primary-500'
+								: 'bg-primary-200'}"
+							on:click={() => (reviewsIndex = i)}
+							aria-label="Go to slide {i + 1}"
+						></button>
+					{/each}
+				</div>
+
+				<!-- Navigation Buttons - Hidden on Mobile -->
+				<button
+					class="bg-primary-500 hover:bg-primary-600 absolute top-1/2 left-0 hidden -translate-y-1/2 rounded-full p-2 text-white shadow-lg transition-colors md:block"
+					on:click={prevReviewSlide}
+					disabled={reviewsIndex === 0}
+				>
+					←
+				</button>
+				<button
+					class="bg-primary-500 hover:bg-primary-600 absolute top-1/2 right-0 hidden -translate-y-1/2 rounded-full p-2 text-white shadow-lg transition-colors md:block"
+					on:click={nextReviewSlide}
+					disabled={isMobile
+						? reviewsIndex === data.reviews[0].data.review.length - 1
+						: reviewsIndex >= data.reviews[0].data.review.length - 2}
+				>
+					→
+				</button>
 			</div>
 		</div>
 	</section>

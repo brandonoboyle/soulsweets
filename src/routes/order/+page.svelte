@@ -4,8 +4,6 @@
     email: '',
     phone: '',
     productType: '',
-    quantity: 1,
-    date: '',
     message: ''
   };
 
@@ -126,12 +124,7 @@
             class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
           />
         </div>
-      </div>
 
-      <!-- Order Details -->
-      <div class="space-y-4">
-        <h2 class="text-xl font-semibold mb-4">Order Details</h2>
-        
         <div>
           <label for="productType" class="block text-sm font-medium mb-1">Product Type</label>
           <select
@@ -146,48 +139,28 @@
             {/each}
           </select>
         </div>
+      </div>
 
+      <!-- Special Requirements -->
+      <div class="space-y-4">
+        <h2 class="text-xl font-semibold mb-4">Special Requirements</h2>
         <div>
-          <label for="quantity" class="block text-sm font-medium mb-1">Quantity</label>
-          <input
-            type="number"
-            id="quantity"
-            bind:value={formData.quantity}
-            min="1"
-            required
+          <label for="message" class="block text-sm font-medium mb-1">Special Requirements or Notes</label>
+          <textarea
+            id="message"
+            bind:value={formData.message}
+            rows="11"
             class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-          />
-        </div>
-
-        <div>
-          <label for="date" class="block text-sm font-medium mb-1">Desired Pickup/Delivery Date</label>
-          <input
-            type="date"
-            id="date"
-            bind:value={formData.date}
-            required
-            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-          />
+            placeholder="Please include any dietary restrictions, allergies, or special requests..."
+          ></textarea>
         </div>
       </div>
-    </div>
-
-    <!-- Special Requirements -->
-    <div>
-      <label for="message" class="block text-sm font-medium mb-1">Special Requirements or Notes</label>
-      <textarea
-        id="message"
-        bind:value={formData.message}
-        rows="4"
-        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-        placeholder="Please include any dietary restrictions, allergies, or special requests..."
-      ></textarea>
     </div>
 
     <div class="text-center">
       <button
         type="submit"
-        class="bg-primary-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-600 transition-colors"
+        class="bg-primary-500 text-surface-50 px-8 py-3 rounded-lg font-medium hover:bg-primary-600 transition-colors"
       >
         Submit Order
       </button>
