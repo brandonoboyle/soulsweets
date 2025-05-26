@@ -10,17 +10,85 @@
   };
 
   const productTypes = ['Cake', 'Brownies', 'Cupcakes'];
+  
+  let showConfirmationNotice = true;
+  let showTimingNotice = true;
 
   function handleSubmit() {
-    // TODO: Implement form submission logic
-    console.log('Form submitted:', formData);
+    // Form will be handled by Netlify
+    return true;
   }
 </script>
 
 <div class="container mx-auto px-4 py-8 max-w-2xl">
   <h1 class="text-3xl font-bold text-center mb-8">Place Your Order</h1>
-  
-  <form on:submit|preventDefault={handleSubmit} class="space-y-6">
+
+  {#if showConfirmationNotice}
+    <div class="bg-warning-50 border-l-4 border-warning-400 p-4 mb-4">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <svg class="h-5 w-5 text-warning-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="ml-3 flex-grow">
+          <h3 class="text-sm font-medium text-warning-800">Please Note:</h3>
+          <div class="mt-2 text-sm text-warning-700">
+            <p>After submitting your order, you will receive a confirmation email within 24 to 48 hours. This email will include an order form and further details. Please be sure to fill out and submit the order form to finalize your order. Orders are not confirmed until the form is completed and returned.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 text-right">
+        <button
+          on:click={() => showConfirmationNotice = false}
+          class="text-sm text-warning-700 hover:text-warning-900 font-medium"
+        >
+          Got it
+        </button>
+      </div>
+    </div>
+  {/if}
+
+  {#if showTimingNotice}
+    <div class="bg-tertiary-50 border-l-4 border-tertiary-400 p-4 mb-8">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <svg class="h-5 w-5 text-tertiary-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="ml-3 flex-grow">
+          <h3 class="text-sm font-medium text-tertiary-800">Order Timing Requirements:</h3>
+          <div class="mt-2 text-sm text-tertiary-700">
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Orders must be placed at least two weeks in advance.</li>
+              <li>Large Orders/Events: Orders over $300 require a minimum of three weeks' notice</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 text-right">
+        <button
+          on:click={() => showTimingNotice = false}
+          class="text-sm text-tertiary-700 hover:text-tertiary-900 font-medium"
+        >
+          Got it
+        </button>
+      </div>
+    </div>
+  {/if}
+
+  <form 
+    name="order-form"
+    method="POST"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    on:submit|preventDefault={handleSubmit} 
+    class="space-y-6"
+  >
+    <input type="hidden" name="form-name" value="order-form" />
+    <input type="hidden" name="bot-field" />
+    
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- Contact Information -->
       <div class="space-y-4">

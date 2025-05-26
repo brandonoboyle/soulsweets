@@ -70,7 +70,63 @@ export type RecentDocument<Lang extends string = string> = prismic.PrismicDocume
 	Lang
 >;
 
-export type AllDocumentTypes = RecentDocument;
+/**
+ * Item in *review → Review*
+ */
+export interface ReviewDocumentDataReviewItem {
+	/**
+	 * Name field in *review → Review*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Customer name
+	 * - **API ID Path**: review.review[].name
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	name: prismic.RichTextField;
+
+	/**
+	 * Quote field in *review → Review*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Their review
+	 * - **API ID Path**: review.review[].quote
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	quote: prismic.RichTextField;
+}
+
+/**
+ * Content for review documents
+ */
+interface ReviewDocumentData {
+	/**
+	 * Review field in *review*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: review.review[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	review: prismic.GroupField<Simplify<ReviewDocumentDataReviewItem>>;
+}
+
+/**
+ * review document from Prismic
+ *
+ * - **API ID**: `review`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ReviewDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<ReviewDocumentData>,
+	'review',
+	Lang
+>;
+
+export type AllDocumentTypes = RecentDocument | ReviewDocument;
 
 declare module '@prismicio/client' {
 	interface CreateClient {
@@ -96,6 +152,9 @@ declare module '@prismicio/client' {
 			RecentDocument,
 			RecentDocumentData,
 			RecentDocumentDataCardItem,
+			ReviewDocument,
+			ReviewDocumentData,
+			ReviewDocumentDataReviewItem,
 			AllDocumentTypes
 		};
 	}

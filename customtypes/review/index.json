@@ -1,0 +1,38 @@
+{
+	"format": "custom",
+	"id": "review",
+	"label": "review",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"review": {
+				"type": "Group",
+				"config": {
+					"label": "Review",
+					"repeat": true,
+					"fields": {
+						"name": {
+							"type": "StructuredText",
+							"config": {
+								"label": "Name",
+								"placeholder": "Customer name",
+								"allowTargetBlank": false,
+								"single": "paragraph,heading3,heading4,heading5,heading6,strong,em"
+							}
+						},
+						"quote": {
+							"type": "StructuredText",
+							"config": {
+								"label": "Quote",
+								"placeholder": "Their review",
+								"allowTargetBlank": false,
+								"multi": "paragraph,heading3,heading4,heading5,heading6,strong,em"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -88,6 +88,11 @@
 </script>
 
 <div class="space-y-16">
+	<h2 class="text-primary-800 mb-4 text-center text-xl md:text-4xl">
+		A taste of <span class="font-marck-script text-primary-500 text-3xl md:text-5xl">Home</span>, a
+		touch of <span class="font-marck-script text-tertiary-500 text-3xl md:text-5xl">Soul</span>
+	</h2>
+
 	<section use:fadeIn={{ delay: 400 }}>
 		<!-- Recent Creations -->
 		<div class="container mx-auto">
@@ -169,41 +174,6 @@
 		</div> -->
 	</section>
 
-	<!-- Hero Section -->
-	<!-- <section class="relative" use:fadeIn>
-		<div
-			class="from-secondary-100 to-secondary-50 flex overflow-hidden rounded-3xl bg-gradient-to-r shadow-xl"
-		>
-			<div class="container mx-auto flex flex-col items-center px-4 py-20 text-center">
-				<p class="text-primary-900 text-4xl">
-					<span
-						class="font-mr-de-haviland text-secondary-400 pr-3 text-6xl font-bold md:font-normal"
-						>Soul</span
-					> Sweets
-				</p>
-				<img src={logo} alt="Soul Sweets Logo" class="h-1/2 w-1/2 md:h-1/4 md:w-1/4" />
-				<p class="text-tertiary-900 mb-8 max-w-2xl text-xl md:text-2xl">
-					With <span class="text-primary-700 font-bold">Kindness</span> &
-					<span class="text-primary-700 font-bold">Gratitude</span>
-				</p>
-				<div class="flex flex-col gap-4 sm:flex-row">
-					<a
-						href="/menu"
-						class="bg-primary-500 text-surface-50 hover:bg-secondary-600 rounded-full px-8 py-3 font-medium transition duration-300"
-					>
-						View Our Menu
-					</a>
-					<a
-						href="/contact"
-						class="bg-surface-50 text-primary-700 border-primary-300 hover:bg-primary-100 rounded-full border px-8 py-3 font-medium transition duration-300"
-					>
-						Personal Order
-					</a>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
 	<section>
 		<div class="container mx-auto">
 			<h2
@@ -222,9 +192,8 @@
 				<div class="space-y-2 px-4 md:w-1/2">
 					<h3 class="text-primary-600 font-mr-de-haviland text-7xl font-bold md:text-8xl">Cakes</h3>
 					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
-						Indulge in our selection of handcrafted cakes, made with love and the finest
-						ingredients. From classic flavors to unique combinations, each cake is a masterpiece
-						waiting to be enjoyed.
+						Moist, fluffy, & soft Soul Sweets cakes are made with love for moments that matter!
+						Choose your flavor, size, and design, and let me take care of the rest.
 					</p>
 					<a
 						href="/order"
@@ -247,8 +216,8 @@
 						Brownies
 					</h3>
 					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
-						Experience the the perfect balance of fudgy and cakey in our signature brownies. Each bite
-						is packed with rich chocolate flavor and topped with premium ingredients.
+						Soft, rich & fudgy brownies made with real Belgian chocolate and Dutch processed cocoa
+						powder. Every bite is packed with a deep, smooth chocolate flavor.
 					</p>
 					<a
 						href="/order"
@@ -271,8 +240,8 @@
 						Cupcakes
 					</h3>
 					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
-						Our cupcakes are miniature works of art, featuring moist cake bases and perfectly piped
-						frosting. Available in a variety of flavors and designs for any occasion.
+						Fluffy, soft & full of flavour Soul Sweets cupcakes are made from scratch and available
+						in a variety of flavors and designs.
 					</p>
 					<a
 						href="/order"
@@ -286,28 +255,40 @@
 	</section>
 
 	<!-- About Section -->
-	<!-- <section class="rounded-lg bg-pink-50 py-16 border-2">
+	<!-- <section class="bg-primary-50 rounded-lg border-2 py-16">
 		<div class="container mx-auto px-4">
 			<div class="flex flex-col items-center gap-12 md:flex-row">
 				<div class="md:w-1/2">
-					<div class="flex h-64 items-center justify-center rounded-lg bg-pink-200 text-pink-800">
-						<span class="text-8xl">👩‍🍳</span>
+					<div
+						class="bg-primary-200 text-primary-800 flex h-64 items-center justify-center rounded-lg"
+					>
+						<span class="text-8xl">Your Photo</span>
 					</div>
 				</div>
 				<div class="space-y-4 md:w-1/2">
-					<h2 class="text-3xl font-bold text-pink-800">Our Story</h2>
-					<p class="text-pink-700">
-						Soul Sweets began with a passion for creating delicious treats that bring joy to our
-						community. Every item in our bakery is made from scratch using only the finest
-						ingredients and traditional recipes with a modern twist.
+					<h2 class="text-primary-800 text-3xl font-bold">
+						I’m Kiara Marfurt-Breakenridge, the creator of Soul Sweets bakery.
+					</h2>
+					<p class="text-primary-700">
+						Growing up and even now, the kitchen has always been the heart of everything In my
+						family. Cooking and baking is how we show love, celebrate, and spend time together.
 					</p>
-					<p class="text-pink-700">
-						Our team of dedicated bakers starts each day before dawn to ensure you get the freshest
-						pastries possible.
+					<p class="text-primary-700">
+						For as long as I can remember I’ve been drawn to baking, my mum says I got it from my
+						grandfather, who once owned a bakery in Old Montreal. I never got the chance to meet
+						him, but I like to think I carry a small part of him with me, especially when I’m in the
+						kitchen.
+					</p>
+					<p class="text-primary-700">
+						No matter what paths I’ve taken in life I always find myself coming back to baking, It’s
+						what I truly love to do. In November 2023, I decided to start Soul Sweets a home based
+						bakery in Russell, Ontario where I specialize in cakes, cupcakes, brownies, and other
+						sweet treats. Everything is made fresh, using quality ingredients and a whole lot of
+						soul.
 					</p>
 					<a
 						href="/about"
-						class="mt-4 inline-block rounded-full bg-pink-600 px-6 py-2 text-white transition duration-300 hover:bg-pink-700"
+						class="bg-primary-600 hover:bg-secondary-700 mt-4 inline-block rounded-full px-6 py-2 text-white transition duration-300"
 					>
 						Read More
 					</a>
@@ -337,31 +318,4 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- Call to Action -->
-	<!-- <section
-		class="from-secondary-200 to-secondary-100 text-primary-50 rounded-lg bg-gradient-to-r py-12 shadow-lg"
-		use:fadeIn={{ delay: 700 }}
-	>
-		<div class="container mx-auto px-4 text-center">
-			<h2 class="text-primary-800 mb-4 text-4xl font-bold">Ready to Order?</h2>
-			<p class="text-primary-800 mx-auto mb-8 max-w-2xl">
-				Visit our menu or order online for special events and celebrations!
-			</p>
-			<div class="flex flex-col justify-center gap-4 sm:flex-row">
-				<a
-					href="/contact"
-					class="text-primary-800 hover:bg-primary-100 bg-primary-300 rounded-full px-8 py-3 font-medium transition duration-300"
-				>
-					View Selection
-				</a>
-				<a
-					href="/menu"
-					class="border-surface-50 text-primary-800 hover:bg-secondary-400 bg-secondary-100 rounded-full border-2 px-8 py-3 font-medium transition duration-300"
-				>
-					Custom Order
-				</a>
-			</div>
-		</div>
-	</section> -->
 </div>

@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	import fb from '$lib/assets/social/facebook.svg';
 	import ig from '$lib/assets/social/instagram.svg';
-	import tw from '$lib/assets/social/twitter.svg';
+	import tt from '$lib/assets/social/tiktok.svg';
 	let { children } = $props();
 
 	let isInfoDropdownOpen = $state(false);
@@ -115,64 +115,12 @@
 							<div class="w-8"></div>
 						</div>
 						<nav class="flex flex-col space-y-2 px-6">
-							<div class="bg-secondary-100/50 rounded-lg px-1">
-								<button
-									onclick={(e) => {
-										e.stopPropagation();
-										toggleInfoDropdown();
-									}}
-									class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 flex w-full items-center rounded-md px-3 py-2 text-lg transition-colors"
-								>
-									<span>Order</span>
-									<svg
-										class="h-6 w-6 transition-transform duration-200"
-										class:rotate-90={isInfoDropdownOpen}
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 20 20"
-										fill="currentColor"
-									>
-										<path
-											fill-rule="evenodd"
-											d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-											clip-rule="evenodd"
-										/>
-									</svg>
-								</button>
-								{#if isInfoDropdownOpen}
-									<div
-										bind:this={dropdownRef}
-										class="bg-secondary-100 mt-2 overflow-hidden rounded-md"
-									>
-										<a
-											href="/order"
-											onclick={() => {
-												isInfoDropdownOpen = false;
-												isMobileMenuOpen = false;
-											}}
-											class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 block px-4 py-3 text-lg transition-colors"
-											>Cakes</a
-										>
-										<a
-											href="/order"
-											onclick={() => {
-												isInfoDropdownOpen = false;
-												isMobileMenuOpen = false;
-											}}
-											class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 block px-4 py-3 text-lg transition-colors"
-											>Brownies</a
-										>
-										<a
-											href="/order"
-											onclick={() => {
-												isInfoDropdownOpen = false;
-												isMobileMenuOpen = false;
-											}}
-											class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 block px-4 py-3 text-lg transition-colors"
-											>Cupcakes</a
-										>
-									</div>
-								{/if}
-							</div>
+							<a
+								href="/order"
+								onclick={() => (isMobileMenuOpen = false)}
+								class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 rounded-md px-4 py-3 text-lg transition-colors"
+								>Order</a
+							>
 							<div class="flex flex-col space-y-2">
 								<a
 									href="/about"
@@ -215,7 +163,7 @@
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 				<div>
 					<h3 class="text-primary-800 mb-3 text-lg font-bold">Soul Sweets</h3>
-					<p class="text-primary-700">The same little blurb here</p>
+					<p class="text-primary-700">From my Home, Heart and Soul</p>
 				</div>
 				<div>
 					<h3 class="text-primary-800 mb-3 text-lg font-bold">Hours</h3>
@@ -226,11 +174,15 @@
 				<div>
 					<a href="/contact"><h3 class="text-primary-800 mb-3 text-lg font-bold">Contact Us</h3></a>
 					<div class="flex gap-4">
-						<a href="https://www.instagram.com/soul.sweets.bakery"
-							><img src={ig} alt="Instagram" class="h-6 w-6" /></a
-						>
-						<img src={fb} alt="Facebook" class="h-6 w-6" />
-						<img src={tw} alt="Twitter" class="h-6 w-6" />
+						<a href="https://www.instagram.com/soul.sweets.bakery" class="flex items-center justify-center">
+							<img src={ig} alt="Instagram" class="h-8 w-8" />
+						</a>
+						<a href="https://www.facebook.com/profile.php?id=61557920452172&mibextid=wwXIfr&rdid=Zbbz2KjCnb7TWgb1&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BXNJM45rH%2F%3Fmibextid%3DwwXIfr" class="flex items-center justify-center">
+							<img src={fb} alt="Facebook" class="h-8 w-8" />
+						</a>
+						<a href="#top" class="flex items-center justify-center">
+							<img src={tt} alt="TikTok" class="h-8 w-8" />
+						</a>
 					</div>
 				</div>
 			</div>
