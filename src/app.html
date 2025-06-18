@@ -20,6 +20,19 @@
 			<textarea name="message"></textarea>
 		</form>
 		
+		<!-- Order Form Detection -->
+		<form name="order-form" netlify netlify-honeypot="bot-field" hidden>
+			<input type="text" name="name" />
+			<input type="email" name="email" />
+			<input type="tel" name="phone" />
+			<select name="productType">
+				<option value="Cake">Cake</option>
+				<option value="Brownies">Brownies</option>
+				<option value="Cupcakes">Cupcakes</option>
+			</select>
+			<textarea name="message"></textarea>
+		</form>
+		
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

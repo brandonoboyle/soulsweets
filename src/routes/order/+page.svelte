@@ -11,15 +11,46 @@
   
   let showConfirmationNotice = true;
   let showTimingNotice = true;
+  let submitted = false;
 
   function handleSubmit() {
     // Form will be handled by Netlify
+    submitted = true;
+    // Reset form after 5 seconds
+    setTimeout(() => {
+      formData = {
+        name: '',
+        email: '',
+        phone: '',
+        productType: '',
+        message: ''
+      };
+      submitted = false;
+    }, 5000);
     return true;
   }
 </script>
 
 <div class="container mx-auto px-4 py-8 max-w-2xl">
   <h1 class="text-3xl font-bold text-center mb-8">Place Your Order</h1>
+
+  {#if submitted}
+    <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-8">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="ml-3">
+          <h3 class="text-sm font-medium text-green-800">Order Submitted Successfully!</h3>
+          <div class="mt-2 text-sm text-green-700">
+            <p>Thank you for your order! You will receive a confirmation email within 24 to 48 hours with further details and an order form to complete your purchase.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {/if}
 
   {#if showConfirmationNotice}
     <div class="bg-warning-50 border-l-4 border-warning-400 p-4 mb-4">
@@ -97,6 +128,7 @@
           <input
             type="text"
             id="name"
+            name="name"
             bind:value={formData.name}
             required
             class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
@@ -108,6 +140,7 @@
           <input
             type="email"
             id="email"
+            name="email"
             bind:value={formData.email}
             required
             class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
@@ -119,6 +152,7 @@
           <input
             type="tel"
             id="phone"
+            name="phone"
             bind:value={formData.phone}
             required
             class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
@@ -129,6 +163,7 @@
           <label for="productType" class="block text-sm font-medium mb-1">Product Type</label>
           <select
             id="productType"
+            name="productType"
             bind:value={formData.productType}
             required
             class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
@@ -148,6 +183,7 @@
           <label for="message" class="block text-sm font-medium mb-1">Special Requirements or Notes</label>
           <textarea
             id="message"
+            name="message"
             bind:value={formData.message}
             rows="11"
             class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
