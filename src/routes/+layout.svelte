@@ -68,7 +68,7 @@
 				class="text-primary-700 absolute left-1/2 -translate-x-1/2 transform text-4xl font-bold"
 			>
 				<p class="text-surface-50">
-					<span class="font-mr-de-haviland text-primary-500 pr-3 text-5xl">Soul</span>Sweets
+					<span class="font-mr-de-haviland text-primary-500 pr-3 text-5xl tracking-wide">Soul</span>Sweets
 				</p>
 			</a>
 			<div class="w-10"></div>
@@ -107,7 +107,7 @@
 							<h1 class="text-primary-700 font-bold">
 								<a href="/" class="transition-opacity hover:opacity-80">
 									<p class="text-surface-50 text-4xl">
-										<span class="font-mr-de-haviland text-primary-500 pr-3 text-5xl">Soul</span
+										<span class="font-mr-de-haviland text-primary-500 pr-3 text-5xl tracking-wide">Soul</span
 										>Sweets
 									</p>
 								</a>
