@@ -115,8 +115,15 @@
     on:submit={handleSubmit} 
     class="space-y-6"
   >
+    <!-- Hidden input for Netlify -->
     <input type="hidden" name="form-name" value="order-form" />
-    <input type="hidden" name="bot-field" />
+    
+    <!-- Honeypot field to prevent spam -->
+    <div class="hidden">
+      <label>
+        Don't fill this out if you're human: <input name="bot-field" />
+      </label>
+    </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- Contact Information -->

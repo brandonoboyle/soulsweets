@@ -68,7 +68,7 @@
 
 					<!-- Map Placeholder -->
 					
-						<div class="bg-primary-100 flex h-64 items-center justify-center rounded-lg p-4 shadow-md">
+						<!-- <div class="bg-primary-100 flex h-64 items-center justify-center rounded-lg p-4 shadow-md">
 							<div class="p-4 text-center">
 								<p class="text-primary-800">
 									A helpful reminder could go here
@@ -76,7 +76,7 @@
 									Something that annoys you
 								</p>
 							</div>
-						</div>
+						</div> -->
 					
 				</div>
 
