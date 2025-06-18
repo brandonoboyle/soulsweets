@@ -27,7 +27,6 @@
       };
       submitted = false;
     }, 5000);
-    return true;
   }
 </script>
 
@@ -110,9 +109,10 @@
   <form 
     name="order-form"
     method="POST"
+    action="/"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
-    on:submit|preventDefault={handleSubmit} 
+    on:submit={handleSubmit} 
     class="space-y-6"
   >
     <input type="hidden" name="form-name" value="order-form" />

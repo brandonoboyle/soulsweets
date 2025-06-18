@@ -93,9 +93,10 @@
 					<form 
 						name="contact" 
 						method="POST" 
+						action="/"
 						data-netlify="true"
 						data-netlify-honeypot="bot-field"
-						on:submit|preventDefault={handleSubmit} 
+						on:submit={handleSubmit} 
 						class="space-y-4"
 					>
 						<!-- Hidden input for Netlify -->
