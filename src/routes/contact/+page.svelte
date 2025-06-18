@@ -7,7 +7,8 @@
 	let submitted = false;
 
 	function handleSubmit() {
-		// In a real application, you would handle form submission to a server here
+		// Netlify will handle the form submission automatically
+		// We just need to show the success message
 		submitted = true;
 		// Reset form
 		setTimeout(() => {
@@ -89,12 +90,28 @@
 						</div>
 					{/if}
 
-					<form on:submit|preventDefault={handleSubmit} class="space-y-4">
+					<form 
+						name="contact" 
+						method="POST" 
+						on:submit|preventDefault={handleSubmit} 
+						class="space-y-4"
+					>
+						<!-- Hidden input for Netlify -->
+						<input type="hidden" name="form-name" value="contact" />
+						
+						<!-- Honeypot field to prevent spam -->
+						<div class="hidden">
+							<label>
+								Don't fill this out if you're human: <input name="bot-field" />
+							</label>
+						</div>
+
 						<div>
 							<label for="name" class="text-primary-700 mb-1 block font-medium">Name</label>
 							<input
 								type="text"
 								id="name"
+								name="name"
 								bind:value={name}
 								required
 								class="border-primary-200 focus:ring-primary-300 w-full rounded border px-4 py-2 focus:ring-2 focus:outline-none"
@@ -105,6 +122,7 @@
 							<input
 								type="email"
 								id="email"
+								name="email"
 								bind:value={email}
 								required
 								class="border-primary-200 focus:ring-primary-300 w-full rounded border px-4 py-2 focus:ring-2 focus:outline-none"
@@ -114,6 +132,7 @@
 							<label for="subject" class="text-primary-700 mb-1 block font-medium">Subject</label>
 							<select
 								id="subject"
+								name="subject"
 								bind:value={subject}
 								required
 								class="border-primary-200 focus:ring-primary-300 w-full rounded border px-4 py-2 focus:ring-2 focus:outline-none"
@@ -130,6 +149,7 @@
 							<label for="message" class="text-primary-700 mb-1 block font-medium">Message</label>
 							<textarea
 								id="message"
+								name="message"
 								bind:value={message}
 								required
 								rows="6"
@@ -138,7 +158,7 @@
 						</div>
 						<button
 							type="submit"
-							class="bg-primary-600 hover:bg-primary-700 w-full rounded-full px-6 py-3 font-medium text-white transition duration-300 md:w-auto"
+							class="bg-primary-600 hover:bg-primary-700 w-full rounded-full px-6 py-3 font-medium text-primary-50 transition duration-300 md:w-auto"
 						>
 							Send Message
 						</button>
