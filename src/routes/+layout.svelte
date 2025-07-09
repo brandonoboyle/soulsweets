@@ -163,7 +163,7 @@
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 				<div>
 					<h3 class="text-primary-800 mb-3 text-lg font-bold">Soul Sweets</h3>
-					<p class="text-primary-700">From my Home, Heart and Soul</p>
+					<p class="text-primary-700">Home Based Bakery Serving Russell and Nearby Communities</p>
 				</div>
 				<div>
 					<h3 class="text-primary-800 mb-3 text-lg font-bold">Hours</h3>
@@ -180,7 +180,7 @@
 						<a href="https://www.facebook.com/profile.php?id=61557920452172&mibextid=wwXIfr&rdid=Zbbz2KjCnb7TWgb1&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BXNJM45rH%2F%3Fmibextid%3DwwXIfr" class="flex items-center justify-center">
 							<img src={fb} alt="Facebook" class="h-8 w-8" />
 						</a>
-						<a href="#top" class="flex items-center justify-center">
+						<a href="https://www.tiktok.com/@kiara.marfurt?_t=ZM-8xQZFaliKIA&_r=1" class="flex items-center justify-center">
 							<img src={tt} alt="TikTok" class="h-8 w-8" />
 						</a>
 					</div>

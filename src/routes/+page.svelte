@@ -56,7 +56,8 @@
 	function prevReviewSlide() {
 		if (isMobile) {
 			reviewsIndex =
-				(reviewsIndex - 1 + data.reviews[0].data.review.length) % data.reviews[0].data.review.length;
+				(reviewsIndex - 1 + data.reviews[0].data.review.length) %
+				data.reviews[0].data.review.length;
 		} else {
 			reviewsIndex = Math.max(reviewsIndex - 2, 0);
 		}
@@ -281,49 +282,6 @@
 		</div>
 	</section>
 
-	<!-- About Section -->
-	<!-- <section class="bg-primary-50 rounded-lg border-2 py-16">
-		<div class="container mx-auto px-4">
-			<div class="flex flex-col items-center gap-12 md:flex-row">
-				<div class="md:w-1/2">
-					<div
-						class="bg-primary-200 text-primary-800 flex h-64 items-center justify-center rounded-lg"
-					>
-						<span class="text-8xl">Your Photo</span>
-					</div>
-				</div>
-				<div class="space-y-4 md:w-1/2">
-					<h2 class="text-primary-800 text-3xl font-bold">
-						I'm Kiara Marfurt-Breakenridge, the creator of Soul Sweets bakery.
-					</h2>
-					<p class="text-primary-700">
-						Growing up and even now, the kitchen has always been the heart of everything In my
-						family. Cooking and baking is how we show love, celebrate, and spend time together.
-					</p>
-					<p class="text-primary-700">
-						For as long as I can remember I've been drawn to baking, my mum says I got it from my
-						grandfather, who once owned a bakery in Old Montreal. I never got the chance to meet
-						him, but I like to think I carry a small part of him with me, especially when I'm in the
-						kitchen.
-					</p>
-					<p class="text-primary-700">
-						No matter what paths I've taken in life I always find myself coming back to baking, It's
-						what I truly love to do. In November 2023, I decided to start Soul Sweets a home based
-						bakery in Russell, Ontario where I specialize in cakes, cupcakes, brownies, and other
-						sweet treats. Everything is made fresh, using quality ingredients and a whole lot of
-						soul.
-					</p>
-					<a
-						href="/about"
-						class="bg-primary-600 hover:bg-secondary-700 mt-4 inline-block rounded-full px-6 py-2 text-white transition duration-300"
-					>
-						Read More
-					</a>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
 	<!-- Testimonials -->
 	<section use:fadeIn={{ delay: 600 }}>
 		<div class="container mx-auto">
@@ -350,8 +308,12 @@
 										class="from-secondary-200 to-secondary-100 text-tertiary-50 rounded-lg bg-gradient-to-r p-6 shadow-md"
 										transition:slide
 									>
-										<div class="text-primary-800 mb-4 text-xl font-bold underline"><PrismicRichText field={review.name} /></div>
-										<div class="text-primary-700 italic"><PrismicRichText field={review.quote} /></div>
+										<div class="text-primary-800 mb-4 text-xl font-bold underline">
+											<PrismicRichText field={review.name} />
+										</div>
+										<div class="text-primary-700 italic">
+											<PrismicRichText field={review.quote} />
+										</div>
 									</div>
 								</div>
 							{/each}

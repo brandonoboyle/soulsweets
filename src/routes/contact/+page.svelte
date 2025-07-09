@@ -35,9 +35,9 @@
 							<div class="flex items-start">
 								<div class="text-primary-600 mr-4 text-2xl">📍</div>
 								<div>
-									<h3 class="text-primary-700 font-bold">Address</h3>
-									<p class="text-primary-600">123 Address Street</p>
-									<p class="text-primary-600">Ottawa, Postal Code</p>
+									<h3 class="text-primary-700 font-bold">Serving Russell and Nearby Communities</h3>
+									<p class="text-primary-600">Pickup available by appointment</p>
+									
 								</div>
 							</div>
 							<div class="flex items-start">
