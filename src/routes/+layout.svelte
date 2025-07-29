@@ -49,9 +49,9 @@
 <div class="flex min-h-screen flex-col">
 	<header class="from-secondary-200 to-secondary-100 sticky top-0 z-40 bg-gradient-to-r shadow-md">
 		<nav class="container mx-auto flex items-center justify-between px-4 py-8">
-			<!-- Mobile menu button -->
+			<!-- Mobile/Tablet menu button -->
 			<button
-				class="text-primary-900 hover:text-primary-600 md:hidden"
+				class="text-primary-900 hover:text-primary-600 xl:hidden"
 				onclick={(e) => {
 					e.stopPropagation();
 					toggleMobileMenu();
@@ -77,7 +77,7 @@
 			<!-- Logo -->
 			<a
 				href="/"
-				class="text-primary-700 absolute left-1/2 -translate-x-1/2 transform text-4xl font-bold"
+				class="text-primary-700 absolute left-1/2 -translate-x-1/2 transform text-4xl font-bold xl:left-1/2 xl:-translate-x-1/2"
 			>
 				<p class="text-surface-50">
 					<span class="font-mr-de-haviland text-primary-500 pr-3 text-5xl tracking-wide">Soul</span
@@ -85,8 +85,8 @@
 				</p>
 			</a>
 
-			<!-- Desktop Navigation -->
-			<div class="hidden md:flex md:items-center md:space-x-6">
+			<!-- Desktop Navigation (xl and up) -->
+			<div class="hidden xl:flex xl:items-center xl:space-x-6">
 				<!-- Pricing Dropdown -->
 				<div class="relative" bind:this={pricingDropdownRef}>
 					<button
@@ -114,7 +114,7 @@
 
 					{#if isPricingDropdownOpen}
 						<div
-							class="ring-opacity-5 absolute top-full right-0 z-50 mt-2 w-48 rounded-md bg-white shadow-lg ring-1 ring-black"
+							class="ring-opacity-5 absolute top-full left-0 z-50 mt-2 w-48 rounded-md bg-primary-100 shadow-lg ring-1 ring-surface-800"
 							transition:slide={{ duration: 200 }}
 						>
 							<div class="py-1">
@@ -156,13 +156,13 @@
 				>
 			</div>
 
-			<!-- Spacer for mobile -->
-			<div class="w-10 md:hidden"></div>
+			<!-- Spacer for mobile/tablet -->
+			<div class="w-10 xl:hidden"></div>
 
 			{#if isMobileMenuOpen}
 				<div
 					bind:this={mobileMenuRef}
-					class="bg-secondary-200/95 fixed inset-x-0 top-0 z-50 backdrop-blur-sm md:hidden"
+					class="bg-secondary-200/95 fixed inset-x-0 top-0 z-50 backdrop-blur-sm xl:hidden"
 					transition:slide={{ duration: 200 }}
 				>
 					<div class="flex max-h-[80vh] flex-col overflow-y-auto">
@@ -202,7 +202,7 @@
 							<div class="w-8"></div>
 						</div>
 						<nav class="flex flex-col space-y-2 px-6">
-							<!-- Mobile Pricing Dropdown -->
+							<!-- Mobile/Tablet Pricing Dropdown -->
 							<div class="flex flex-col space-y-2">
 								<button
 									onclick={(e) => {
