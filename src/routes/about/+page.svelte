@@ -12,8 +12,8 @@
 
 			<!-- Our Story Section -->
 			<section class="bg-primary-50 rounded-lg border-2 py-16">
-				<div class="container mx-auto px-4">
-					<div class="flex flex-col items-center gap-12 md:flex-row">
+				<div class="container mx-auto px-8">
+					<div class="flex flex-col items-center gap-8 md:flex-row">
 						<div class="md:w-1/2">
 							<div
 								class="bg-primary-200 text-primary-800 flex items-center justify-center rounded-lg"
