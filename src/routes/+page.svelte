@@ -138,7 +138,7 @@
 						{#each data.recent.data.card as card, i}
 							<div class="w-full flex-shrink-0 px-4 md:w-1/3">
 								<div
-									class="bg-primary-100 flex h-full flex-col rounded-lg p-6 shadow-md transition duration-300"
+									class="bg-primary-100 flex h-full flex-col rounded-lg p-2 shadow-md transition duration-300"
 								>
 									<div
 										class="bg-secondary-100 text-primary-800 mb-4 flex items-center justify-center overflow-hidden rounded"
