@@ -1,0 +1,22 @@
+{
+	"format": "custom",
+	"id": "cake_toppings",
+	"label": "cake toppings",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"cake_toppings": {
+				"type": "Image",
+				"config": {
+					"label": "Cake Toppings",
+					"constraint": {
+						"width": 1080,
+						"height": 1920
+					},
+					"thumbnails": []
+				}
+			}
+		}
+	}
+}

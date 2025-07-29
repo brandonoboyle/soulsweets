@@ -1,0 +1,22 @@
+{
+	"format": "custom",
+	"id": "cake_flavours",
+	"label": "cake flavours",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"cake_flavours": {
+				"type": "Image",
+				"config": {
+					"label": "Cake Flavours",
+					"constraint": {
+						"width": 1080,
+						"height": 1920
+					},
+					"thumbnails": []
+				}
+			}
+		}
+	}
+}

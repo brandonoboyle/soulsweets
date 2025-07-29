@@ -1,0 +1,22 @@
+{
+	"format": "custom",
+	"id": "delivery_insert",
+	"label": "delivery Insert",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"delivery_insert": {
+				"type": "Image",
+				"config": {
+					"label": "Delivery Insert",
+					"constraint": {
+						"width": 1080,
+						"height": 1920
+					},
+					"thumbnails": []
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"format": "custom",
+	"id": "cupcake_insert",
+	"label": "cupcake insert",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"cupcake_insert": {
+				"type": "Image",
+				"config": {
+					"label": "Cupcake Insert",
+					"constraint": {
+						"width": 1080,
+						"height": 1920
+					},
+					"thumbnails": []
+				}
+			}
+		}
+	}
+}

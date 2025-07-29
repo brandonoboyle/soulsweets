@@ -4,6 +4,242 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type PickContentRelationshipFieldData<
+	TRelationship extends
+		| prismic.CustomTypeModelFetchCustomTypeLevel1
+		| prismic.CustomTypeModelFetchCustomTypeLevel2
+		| prismic.CustomTypeModelFetchGroupLevel1
+		| prismic.CustomTypeModelFetchGroupLevel2,
+	TData extends Record<
+		string,
+		prismic.AnyRegularField | prismic.GroupField | prismic.NestedGroupField | prismic.SliceZone
+	>,
+	TLang extends string
+> =
+	// Content relationship fields
+	{
+		[TSubRelationship in Extract<
+			TRelationship['fields'][number],
+			prismic.CustomTypeModelFetchContentRelationshipLevel1
+		> as TSubRelationship['id']]: ContentRelationshipFieldWithData<
+			TSubRelationship['customtypes'],
+			TLang
+		>;
+	} & // Group
+	{
+		[TGroup in Extract<
+			TRelationship['fields'][number],
+			prismic.CustomTypeModelFetchGroupLevel1 | prismic.CustomTypeModelFetchGroupLevel2
+		> as TGroup['id']]: TData[TGroup['id']] extends prismic.GroupField<infer TGroupData>
+			? prismic.GroupField<PickContentRelationshipFieldData<TGroup, TGroupData, TLang>>
+			: never;
+	} & // Other fields
+	{
+		[TFieldKey in Extract<TRelationship['fields'][number], string>]: TFieldKey extends keyof TData
+			? TData[TFieldKey]
+			: never;
+	};
+
+type ContentRelationshipFieldWithData<
+	TCustomType extends
+		| readonly (prismic.CustomTypeModelFetchCustomTypeLevel1 | string)[]
+		| readonly (prismic.CustomTypeModelFetchCustomTypeLevel2 | string)[],
+	TLang extends string = string
+> = {
+	[ID in Exclude<TCustomType[number], string>['id']]: prismic.ContentRelationshipField<
+		ID,
+		TLang,
+		PickContentRelationshipFieldData<
+			Extract<TCustomType[number], { id: ID }>,
+			Extract<prismic.Content.AllDocumentTypes, { type: ID }>['data'],
+			TLang
+		>
+	>;
+}[Exclude<TCustomType[number], string>['id']];
+
+/**
+ * Content for brownie insert documents
+ */
+interface BrownieInsertDocumentData {
+	/**
+	 * Brownie Insert field in *brownie insert*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: brownie_insert.brownie_insert
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	brownie_insert: prismic.ImageField<never>;
+}
+
+/**
+ * brownie insert document from Prismic
+ *
+ * - **API ID**: `brownie_insert`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BrownieInsertDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<BrownieInsertDocumentData>,
+	'brownie_insert',
+	Lang
+>;
+
+/**
+ * Content for cake base documents
+ */
+interface CakeBaseDocumentData {
+	/**
+	 * Cake Base field in *cake base*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cake_base.cake_base
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	cake_base: prismic.ImageField<never>;
+}
+
+/**
+ * cake base document from Prismic
+ *
+ * - **API ID**: `cake_base`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CakeBaseDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<CakeBaseDocumentData>,
+	'cake_base',
+	Lang
+>;
+
+/**
+ * Content for cake flavours documents
+ */
+interface CakeFlavoursDocumentData {
+	/**
+	 * Cake Flavours field in *cake flavours*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cake_flavours.cake_flavours
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	cake_flavours: prismic.ImageField<never>;
+}
+
+/**
+ * cake flavours document from Prismic
+ *
+ * - **API ID**: `cake_flavours`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CakeFlavoursDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<CakeFlavoursDocumentData>,
+	'cake_flavours',
+	Lang
+>;
+
+/**
+ * Content for cake toppings documents
+ */
+interface CakeToppingsDocumentData {
+	/**
+	 * Cake Toppings field in *cake toppings*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cake_toppings.cake_toppings
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	cake_toppings: prismic.ImageField<never>;
+}
+
+/**
+ * cake toppings document from Prismic
+ *
+ * - **API ID**: `cake_toppings`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CakeToppingsDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<CakeToppingsDocumentData>,
+	'cake_toppings',
+	Lang
+>;
+
+/**
+ * Content for cupcake insert documents
+ */
+interface CupcakeInsertDocumentData {
+	/**
+	 * Cupcake Insert field in *cupcake insert*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: cupcake_insert.cupcake_insert
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	cupcake_insert: prismic.ImageField<never>;
+}
+
+/**
+ * cupcake insert document from Prismic
+ *
+ * - **API ID**: `cupcake_insert`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CupcakeInsertDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<CupcakeInsertDocumentData>,
+	'cupcake_insert',
+	Lang
+>;
+
+/**
+ * Content for delivery Insert documents
+ */
+interface DeliveryInsertDocumentData {
+	/**
+	 * Delivery Insert field in *delivery Insert*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: delivery_insert.delivery_insert
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	delivery_insert: prismic.ImageField<never>;
+}
+
+/**
+ * delivery Insert document from Prismic
+ *
+ * - **API ID**: `delivery_insert`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DeliveryInsertDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithoutUID<Simplify<DeliveryInsertDocumentData>, 'delivery_insert', Lang>;
+
 /**
  * Item in *recent → Card*
  */
@@ -14,7 +250,7 @@ export interface RecentDocumentDataCardItem {
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: recent.card[].item
-	 * - **Documentation**: https://prismic.io/docs/field#image
+	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
 	item: prismic.ImageField<never>;
 
@@ -24,7 +260,7 @@ export interface RecentDocumentDataCardItem {
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: recent.card[].description
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	description: prismic.RichTextField;
 
@@ -34,7 +270,7 @@ export interface RecentDocumentDataCardItem {
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: recent.card[].button_link
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	button_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
@@ -50,7 +286,7 @@ interface RecentDocumentData {
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: recent.card[]
 	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#group
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	card: prismic.GroupField<Simplify<RecentDocumentDataCardItem>>;
 }
@@ -60,7 +296,7 @@ interface RecentDocumentData {
  *
  * - **API ID**: `recent`
  * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
+ * - **Documentation**: https://prismic.io/docs/content-modeling
  *
  * @typeParam Lang - Language API ID of the document.
  */
@@ -80,7 +316,7 @@ export interface ReviewDocumentDataReviewItem {
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: Customer name
 	 * - **API ID Path**: review.review[].name
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	name: prismic.RichTextField;
 
@@ -90,7 +326,7 @@ export interface ReviewDocumentDataReviewItem {
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: Their review
 	 * - **API ID Path**: review.review[].quote
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	quote: prismic.RichTextField;
 }
@@ -106,7 +342,7 @@ interface ReviewDocumentData {
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: review.review[]
 	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#group
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	review: prismic.GroupField<Simplify<ReviewDocumentDataReviewItem>>;
 }
@@ -116,7 +352,7 @@ interface ReviewDocumentData {
  *
  * - **API ID**: `review`
  * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
+ * - **Documentation**: https://prismic.io/docs/content-modeling
  *
  * @typeParam Lang - Language API ID of the document.
  */
@@ -126,7 +362,15 @@ export type ReviewDocument<Lang extends string = string> = prismic.PrismicDocume
 	Lang
 >;
 
-export type AllDocumentTypes = RecentDocument | ReviewDocument;
+export type AllDocumentTypes =
+	| BrownieInsertDocument
+	| CakeBaseDocument
+	| CakeFlavoursDocument
+	| CakeToppingsDocument
+	| CupcakeInsertDocument
+	| DeliveryInsertDocument
+	| RecentDocument
+	| ReviewDocument;
 
 declare module '@prismicio/client' {
 	interface CreateClient {
@@ -149,6 +393,18 @@ declare module '@prismicio/client' {
 
 	namespace Content {
 		export type {
+			BrownieInsertDocument,
+			BrownieInsertDocumentData,
+			CakeBaseDocument,
+			CakeBaseDocumentData,
+			CakeFlavoursDocument,
+			CakeFlavoursDocumentData,
+			CakeToppingsDocument,
+			CakeToppingsDocumentData,
+			CupcakeInsertDocument,
+			CupcakeInsertDocumentData,
+			DeliveryInsertDocument,
+			DeliveryInsertDocumentData,
 			RecentDocument,
 			RecentDocumentData,
 			RecentDocumentDataCardItem,

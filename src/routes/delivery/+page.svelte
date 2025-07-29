@@ -1,26 +1,25 @@
-
 <script lang="ts">
     import { PrismicImage } from '@prismicio/svelte';
-    import type { BrownieInsertDocument } from '../../prismicio-types';
+    import type { DeliveryInsertDocument } from '../../prismicio-types';
 
-    let { data } = $props<{ data: { brownie: BrownieInsertDocument } }>();
+    let { data } = $props<{ data: { delivery: DeliveryInsertDocument } }>();
 </script>
 
 <div class="container mx-auto px-4 py-8">
     <div class="max-w-4xl mx-auto">
         <!-- <h1 class="text-primary-600 bg-secondary-100 font-marck-script mb-12 rounded-full px-6 py-4 text-center text-4xl shadow-lg md:text-7xl">Delivery Information</h1>
          -->
-        {#if data.brownie?.data?.brownie_insert}
+        {#if data.delivery?.data?.delivery_insert}
             <div class="rounded-xl shadow-lg overflow-hidden">
                 <PrismicImage 
-                    field={data.brownie.data.brownie_insert} 
+                    field={data.delivery.data.delivery_insert} 
                     class="w-full h-auto object-cover"
                     alt=""
                 />
             </div>
         {:else}
             <div class="text-center py-12">
-                <p class="text-primary-600 text-lg">No brownie information available at the moment.</p>
+                <p class="text-primary-600 text-lg">No delivery information available at the moment.</p>
             </div>
         {/if}
     </div>

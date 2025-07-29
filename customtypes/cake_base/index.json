@@ -1,0 +1,22 @@
+{
+	"format": "custom",
+	"id": "cake_base",
+	"label": "cake base",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"cake_base": {
+				"type": "Image",
+				"config": {
+					"label": "Cake Base",
+					"constraint": {
+						"width": 1080,
+						"height": 1920
+					},
+					"thumbnails": []
+				}
+			}
+		}
+	}
+}

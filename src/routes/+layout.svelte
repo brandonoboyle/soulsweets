@@ -8,12 +8,18 @@
 	let { children } = $props();
 
 	let isInfoDropdownOpen = $state(false);
+	let isPricingDropdownOpen = $state(false);
 	let isMobileMenuOpen = $state(false);
 	let dropdownRef = $state<HTMLElement | undefined>(undefined);
+	let pricingDropdownRef = $state<HTMLElement | undefined>(undefined);
 	let mobileMenuRef = $state<HTMLElement | undefined>(undefined);
 
 	function toggleInfoDropdown() {
 		isInfoDropdownOpen = !isInfoDropdownOpen;
+	}
+
+	function togglePricingDropdown() {
+		isPricingDropdownOpen = !isPricingDropdownOpen;
 	}
 
 	function toggleMobileMenu() {
@@ -24,6 +30,9 @@
 		function handleClickOutside(event: MouseEvent) {
 			if (dropdownRef && !dropdownRef.contains(event.target as Node)) {
 				isInfoDropdownOpen = false;
+			}
+			if (pricingDropdownRef && !pricingDropdownRef.contains(event.target as Node)) {
+				isPricingDropdownOpen = false;
 			}
 			if (mobileMenuRef && !mobileMenuRef.contains(event.target as Node)) {
 				isMobileMenuOpen = false;
@@ -40,8 +49,9 @@
 <div class="flex min-h-screen flex-col">
 	<header class="from-secondary-200 to-secondary-100 sticky top-0 z-40 bg-gradient-to-r shadow-md">
 		<nav class="container mx-auto flex items-center justify-between px-4 py-8">
+			<!-- Mobile menu button -->
 			<button
-				class="text-primary-900 hover:text-primary-600"
+				class="text-primary-900 hover:text-primary-600 md:hidden"
 				onclick={(e) => {
 					e.stopPropagation();
 					toggleMobileMenu();
@@ -63,23 +73,99 @@
 					/>
 				</svg>
 			</button>
+
+			<!-- Logo -->
 			<a
 				href="/"
 				class="text-primary-700 absolute left-1/2 -translate-x-1/2 transform text-4xl font-bold"
 			>
 				<p class="text-surface-50">
-					<span class="font-mr-de-haviland text-primary-500 pr-3 text-5xl tracking-wide">Soul</span>Sweets
+					<span class="font-mr-de-haviland text-primary-500 pr-3 text-5xl tracking-wide">Soul</span
+					>Sweets
 				</p>
 			</a>
-			<div class="w-10"></div>
+
+			<!-- Desktop Navigation -->
+			<div class="hidden md:flex md:items-center md:space-x-6">
+				<!-- Pricing Dropdown -->
+				<div class="relative" bind:this={pricingDropdownRef}>
+					<button
+						onclick={(e) => {
+							e.stopPropagation();
+							togglePricingDropdown();
+						}}
+						class="text-primary-900 hover:text-primary-600 flex items-center space-x-1 transition-colors"
+					>
+						<span>Pricing</span>
+						<svg
+							class="h-4 w-4 transition-transform {isPricingDropdownOpen ? 'rotate-180' : ''}"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M19 9l-7 7-7-7"
+							/>
+						</svg>
+					</button>
+
+					{#if isPricingDropdownOpen}
+						<div
+							class="ring-opacity-5 absolute top-full right-0 z-50 mt-2 w-48 rounded-md bg-white shadow-lg ring-1 ring-black"
+							transition:slide={{ duration: 200 }}
+						>
+							<div class="py-1">
+								<a
+									href="/cakes"
+									onclick={() => (isPricingDropdownOpen = false)}
+									class="text-primary-900 hover:bg-primary-50 block px-4 py-2 text-sm transition-colors"
+								>
+									Cakes
+								</a>
+								<a
+									href="/cupcakes"
+									onclick={() => (isPricingDropdownOpen = false)}
+									class="text-primary-900 hover:bg-primary-50 block px-4 py-2 text-sm transition-colors"
+								>
+									Cupcakes
+								</a>
+								<a
+									href="/brownies"
+									onclick={() => (isPricingDropdownOpen = false)}
+									class="text-primary-900 hover:bg-primary-50 block px-4 py-2 text-sm transition-colors"
+								>
+									Brownies
+								</a>
+							</div>
+						</div>
+					{/if}
+				</div>
+
+				<a href="/order" class="text-primary-900 hover:text-primary-600 transition-colors">Order</a>
+				<a href="/delivery" class="text-primary-900 hover:text-primary-600 transition-colors">Delivery</a>
+				<a href="/about" class="text-primary-900 hover:text-primary-600 transition-colors">About</a>
+				<a href="/policy" class="text-primary-900 hover:text-primary-600 transition-colors"
+					>Policy</a
+				>
+				<a href="/care" class="text-primary-900 hover:text-primary-600 transition-colors">Care</a>
+				<a href="/contact" class="text-primary-900 hover:text-primary-600 transition-colors"
+					>Contact</a
+				>
+			</div>
+
+			<!-- Spacer for mobile -->
+			<div class="w-10 md:hidden"></div>
 
 			{#if isMobileMenuOpen}
 				<div
 					bind:this={mobileMenuRef}
-					class="bg-secondary-200/95 fixed inset-x-0 top-0 z-50 backdrop-blur-sm"
+					class="bg-secondary-200/95 fixed inset-x-0 top-0 z-50 backdrop-blur-sm md:hidden"
 					transition:slide={{ duration: 200 }}
 				>
-					<div class="flex flex-col max-h-[80vh] overflow-y-auto">
+					<div class="flex max-h-[80vh] flex-col overflow-y-auto">
 						<div class="border-primary-200/20 flex items-center justify-between border-b p-6">
 							<button
 								class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 rounded-full p-2 transition-colors"
@@ -107,7 +193,8 @@
 							<h1 class="text-primary-700 font-bold">
 								<a href="/" class="transition-opacity hover:opacity-80">
 									<p class="text-surface-50 text-4xl">
-										<span class="font-mr-de-haviland text-primary-500 pr-3 text-5xl tracking-wide">Soul</span
+										<span class="font-mr-de-haviland text-primary-500 pr-3 text-5xl tracking-wide"
+											>Soul</span
 										>Sweets
 									</p>
 								</a>
@@ -115,13 +202,81 @@
 							<div class="w-8"></div>
 						</div>
 						<nav class="flex flex-col space-y-2 px-6">
+							<!-- Mobile Pricing Dropdown -->
+							<div class="flex flex-col space-y-2">
+								<button
+									onclick={(e) => {
+										e.stopPropagation();
+										togglePricingDropdown();
+									}}
+									class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 flex items-center justify-between rounded-md px-4 py-3 text-left text-lg transition-colors"
+								>
+									<span>Pricing</span>
+									<svg
+										class="h-4 w-4 transition-transform {isPricingDropdownOpen ? 'rotate-180' : ''}"
+										fill="none"
+										stroke="currentColor"
+										viewBox="0 0 24 24"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M19 9l-7 7-7-7"
+										/>
+									</svg>
+								</button>
+
+								{#if isPricingDropdownOpen}
+									<div class="ml-4 space-y-2" transition:slide={{ duration: 200 }}>
+										<a
+											href="/cakes"
+											onclick={() => {
+												isPricingDropdownOpen = false;
+												isMobileMenuOpen = false;
+											}}
+											class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 block rounded-md px-4 py-2 text-base transition-colors"
+										>
+											Cakes
+										</a>
+										<a
+											href="/cupcakes"
+											onclick={() => {
+												isPricingDropdownOpen = false;
+												isMobileMenuOpen = false;
+											}}
+											class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 block rounded-md px-4 py-2 text-base transition-colors"
+										>
+											Cupcakes
+										</a>
+										<a
+											href="/brownies"
+											onclick={() => {
+												isPricingDropdownOpen = false;
+												isMobileMenuOpen = false;
+											}}
+											class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 block rounded-md px-4 py-2 text-base transition-colors"
+										>
+											Brownies
+										</a>
+									</div>
+								{/if}
+							</div>
+
 							<a
 								href="/order"
 								onclick={() => (isMobileMenuOpen = false)}
 								class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 rounded-md px-4 py-3 text-lg transition-colors"
 								>Order</a
 							>
+
 							<div class="flex flex-col space-y-2">
+								<a
+									href="/delivery"
+									onclick={() => (isMobileMenuOpen = false)}
+									class="text-primary-900 hover:text-primary-600 hover:bg-primary-100/20 rounded-md px-4 py-3 text-lg transition-colors"
+									>Delivery</a
+								>
 								<a
 									href="/about"
 									onclick={() => (isMobileMenuOpen = false)}
@@ -174,13 +329,22 @@
 				<div>
 					<a href="/contact"><h3 class="text-primary-800 mb-3 text-lg font-bold">Contact Us</h3></a>
 					<div class="flex gap-4">
-						<a href="https://www.instagram.com/soul.sweets.bakery" class="flex items-center justify-center">
+						<a
+							href="https://www.instagram.com/soul.sweets.bakery"
+							class="flex items-center justify-center"
+						>
 							<img src={ig} alt="Instagram" class="h-8 w-8" />
 						</a>
-						<a href="https://www.facebook.com/profile.php?id=61557920452172&mibextid=wwXIfr&rdid=Zbbz2KjCnb7TWgb1&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BXNJM45rH%2F%3Fmibextid%3DwwXIfr" class="flex items-center justify-center">
+						<a
+							href="https://www.facebook.com/profile.php?id=61557920452172&mibextid=wwXIfr&rdid=Zbbz2KjCnb7TWgb1&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BXNJM45rH%2F%3Fmibextid%3DwwXIfr"
+							class="flex items-center justify-center"
+						>
 							<img src={fb} alt="Facebook" class="h-8 w-8" />
 						</a>
-						<a href="https://www.tiktok.com/@kiara.marfurt?_t=ZM-8xQZFaliKIA&_r=1" class="flex items-center justify-center">
+						<a
+							href="https://www.tiktok.com/@kiara.marfurt?_t=ZM-8xQZFaliKIA&_r=1"
+							class="flex items-center justify-center"
+						>
 							<img src={tt} alt="TikTok" class="h-8 w-8" />
 						</a>
 					</div>
