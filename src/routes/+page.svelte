@@ -9,8 +9,9 @@
 	import brownies from '$lib/assets/pics/brownies.jpg';
 	import cupcakes from '$lib/assets/pics/cupcakes.jpg';
 	import { fadeIn } from '$lib/actions/fadeIn';
+	import { preloadImages } from '$lib/utils/imagePreloader';
 
-	export let data: { recent: RecentDocument; reviews: ReviewDocument[] };
+	export let data: { recent: RecentDocument; reviews: ReviewDocument[]; imageUrls: string[] };
 
 	let currentIndex = 0;
 	let reviewsIndex = 0;
@@ -26,6 +27,26 @@
 		window.addEventListener('resize', () => {
 			isMobile = window.innerWidth < 768;
 		});
+
+		// Preload critical images from Prismic CMS with high priority
+		if (data.imageUrls && data.imageUrls.length > 0) {
+			// Preload first 3 images with high priority (above the fold)
+			const criticalImages = data.imageUrls.slice(0, 3);
+			const nonCriticalImages = data.imageUrls.slice(3);
+			
+			preloadImages(criticalImages, { priority: 'high' }).catch(console.warn);
+			
+			// Preload remaining images with low priority after a delay
+			if (nonCriticalImages.length > 0) {
+				setTimeout(() => {
+					preloadImages(nonCriticalImages, { priority: 'low' }).catch(console.warn);
+				}, 1000);
+			}
+		}
+
+		// Preload local static images with high priority
+		const staticImages = [cakes, brownies, cupcakes];
+		preloadImages(staticImages, { priority: 'high' }).catch(console.warn);
 	});
 
 	function nextSlide() {
@@ -114,6 +135,18 @@
 		}
 	}
 </script>
+
+<svelte:head>
+	<!-- Preload critical images in HTML head for faster loading -->
+	<link rel="preload" as="image" href={cakes} />
+	<link rel="preload" as="image" href={brownies} />
+	<link rel="preload" as="image" href={cupcakes} />
+	{#if data.imageUrls && data.imageUrls.length > 0}
+		{#each data.imageUrls.slice(0, 3) as url}
+			<link rel="preload" as="image" href={url} />
+		{/each}
+	{/if}
+</svelte:head>
 
 <div class="space-y-16">
 	<h2 class="text-primary-800 mb-4 text-center text-xl md:text-4xl">

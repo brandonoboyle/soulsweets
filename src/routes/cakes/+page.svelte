@@ -2,15 +2,16 @@
     import { PrismicImage } from '@prismicio/svelte';
     import { ChevronDown, Cake, Star, CakeSlice } from 'lucide-svelte';
     import { slide } from 'svelte/transition';
-    import type { CakeBaseDocument } from '../../prismicio-types';
-    import type { CakeFlavoursDocument } from '../../prismicio-types';
-    import type { CakeToppingsDocument } from '../../prismicio-types';
+    import { onMount } from 'svelte';
+    import { preloadImages } from '$lib/utils/imagePreloader';
+    import type { CakeBaseDocument, CakeFlavoursDocument, CakeToppingsDocument } from '../../prismicio-types';
 
     let { data } = $props<{ 
         data: { 
             cakeBase: CakeBaseDocument;
             cakeFlavours: CakeFlavoursDocument;
             cakeToppings: CakeToppingsDocument;
+            imageUrls: string[];
         } 
     }>();
     
@@ -45,7 +46,22 @@
     const toggleSection = (section: Section) => {
         activeSection = activeSection === section.title ? null : section.title;
     };
+
+    onMount(() => {
+        // Actively preload all cake images to ensure they're ready
+        if (data.imageUrls && data.imageUrls.length > 0) {
+            preloadImages(data.imageUrls, { priority: 'high' }).catch(console.warn);
+        }
+    });
 </script>
+
+<svelte:head>
+    {#if data.imageUrls && data.imageUrls.length > 0}
+        {#each data.imageUrls as url}
+            <link rel="preload" as="image" href={url} />
+        {/each}
+    {/if}
+</svelte:head>
 
 <div class="min-h-screen px-4 py-12 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-4xl">
@@ -80,6 +96,7 @@
                                         field={section.image} 
                                         class="w-full h-auto object-cover"
                                         alt=""
+                                        imgixParams={{ auto: ['format'], q: 85 }}
                                     />
                                 </div>
                             {:else}
