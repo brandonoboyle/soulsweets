@@ -23,7 +23,7 @@
         icon: any;
     }
 
-    let activeSection = $state<string | null>(null);
+    let activeSection = $state<string | null>('Cake Base');
 
     const sections: Section[] = [
         {
