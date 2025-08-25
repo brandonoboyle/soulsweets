@@ -96,7 +96,6 @@
                                         field={section.image} 
                                         class="w-full h-auto object-cover"
                                         alt=""
-                                        imgixParams={{ auto: ['format'], q: 85 }}
                                     />
                                 </div>
                             {:else}

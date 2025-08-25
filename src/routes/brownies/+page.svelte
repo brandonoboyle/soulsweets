@@ -31,7 +31,6 @@
                     field={data.brownie.data.brownie_insert} 
                     class="w-full h-auto object-cover"
                     alt=""
-                    imgixParams={{ auto: ['format'], q: 85 }}
                 />
             </div>
         {:else}
