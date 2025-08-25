@@ -1,0 +1,22 @@
+{
+	"format": "custom",
+	"id": "display_cupcake",
+	"label": "display cupcake",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"display_cupcake": {
+				"type": "Image",
+				"config": {
+					"label": "display cupcake",
+					"constraint": {
+						"width": 800,
+						"height": 1000
+					},
+					"thumbnails": []
+				}
+			}
+		}
+	}
+}

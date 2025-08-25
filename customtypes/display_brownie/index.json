@@ -1,0 +1,22 @@
+{
+	"format": "custom",
+	"id": "display_brownie",
+	"label": "display brownie",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"display_brownie": {
+				"type": "Image",
+				"config": {
+					"label": "Display Brownie",
+					"constraint": {
+						"width": 800,
+						"height": 1000
+					},
+					"thumbnails": []
+				}
+			}
+		}
+	}
+}

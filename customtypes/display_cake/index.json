@@ -1,0 +1,22 @@
+{
+	"format": "custom",
+	"id": "display_cake",
+	"label": "display cake",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"display_cake": {
+				"type": "Image",
+				"config": {
+					"label": "Display Cake",
+					"constraint": {
+						"width": 800,
+						"height": 1000
+					},
+					"thumbnails": []
+				}
+			}
+		}
+	}
+}

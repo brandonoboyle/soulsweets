@@ -241,6 +241,93 @@ export type DeliveryInsertDocument<Lang extends string = string> =
 	prismic.PrismicDocumentWithoutUID<Simplify<DeliveryInsertDocumentData>, 'delivery_insert', Lang>;
 
 /**
+ * Content for display brownie documents
+ */
+interface DisplayBrownieDocumentData {
+	/**
+	 * Display Brownie field in *display brownie*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: display_brownie.display_brownie
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	display_brownie: prismic.ImageField<never>;
+}
+
+/**
+ * display brownie document from Prismic
+ *
+ * - **API ID**: `display_brownie`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DisplayBrownieDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithoutUID<Simplify<DisplayBrownieDocumentData>, 'display_brownie', Lang>;
+
+/**
+ * Content for display cake documents
+ */
+interface DisplayCakeDocumentData {
+	/**
+	 * Display Cake field in *display cake*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: display_cake.display_cake
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	display_cake: prismic.ImageField<never>;
+}
+
+/**
+ * display cake document from Prismic
+ *
+ * - **API ID**: `display_cake`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DisplayCakeDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<DisplayCakeDocumentData>,
+	'display_cake',
+	Lang
+>;
+
+/**
+ * Content for display cupcake documents
+ */
+interface DisplayCupcakeDocumentData {
+	/**
+	 * display cupcake field in *display cupcake*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: display_cupcake.display_cupcake
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	display_cupcake: prismic.ImageField<never>;
+}
+
+/**
+ * display cupcake document from Prismic
+ *
+ * - **API ID**: `display_cupcake`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DisplayCupcakeDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithoutUID<Simplify<DisplayCupcakeDocumentData>, 'display_cupcake', Lang>;
+
+/**
  * Item in *recent → Card*
  */
 export interface RecentDocumentDataCardItem {
@@ -369,6 +456,9 @@ export type AllDocumentTypes =
 	| CakeToppingsDocument
 	| CupcakeInsertDocument
 	| DeliveryInsertDocument
+	| DisplayBrownieDocument
+	| DisplayCakeDocument
+	| DisplayCupcakeDocument
 	| RecentDocument
 	| ReviewDocument;
 
@@ -405,6 +495,12 @@ declare module '@prismicio/client' {
 			CupcakeInsertDocumentData,
 			DeliveryInsertDocument,
 			DeliveryInsertDocumentData,
+			DisplayBrownieDocument,
+			DisplayBrownieDocumentData,
+			DisplayCakeDocument,
+			DisplayCakeDocumentData,
+			DisplayCupcakeDocument,
+			DisplayCupcakeDocumentData,
 			RecentDocument,
 			RecentDocumentData,
 			RecentDocumentDataCardItem,

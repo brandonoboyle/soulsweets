@@ -5,13 +5,25 @@
 	import type { ReviewDocument } from '../prismicio-types';
 	import { PrismicRichText, PrismicImage } from '@prismicio/svelte';
 	import { onMount } from 'svelte';
-	import cakes from '$lib/assets/pics/cakes.jpg';
+
 	import brownies from '$lib/assets/pics/brownies.jpg';
 	import cupcakes from '$lib/assets/pics/cupcakes.jpg';
 	import { fadeIn } from '$lib/actions/fadeIn';
 	import { preloadImages } from '$lib/utils/imagePreloader';
+	import type {
+		DisplayBrownieDocument,
+		DisplayCakeDocument,
+		DisplayCupcakeDocument
+	} from '../prismicio-types';
 
-	export let data: { recent: RecentDocument; reviews: ReviewDocument[]; imageUrls: string[] };
+	export let data: {
+		displayCake: DisplayCakeDocument;
+		displayBrownie: DisplayBrownieDocument;
+		displayCupcake: DisplayCupcakeDocument;
+		recent: RecentDocument;
+		reviews: ReviewDocument[];
+		imageUrls: string[];
+	};
 
 	let currentIndex = 0;
 	let reviewsIndex = 0;
@@ -33,9 +45,9 @@
 			// Preload first 3 images with high priority (above the fold)
 			const criticalImages = data.imageUrls.slice(0, 3);
 			const nonCriticalImages = data.imageUrls.slice(3);
-			
+
 			preloadImages(criticalImages, { priority: 'high' }).catch(console.warn);
-			
+
 			// Preload remaining images with low priority after a delay
 			if (nonCriticalImages.length > 0) {
 				setTimeout(() => {
@@ -45,7 +57,7 @@
 		}
 
 		// Preload local static images with high priority
-		const staticImages = [cakes, brownies, cupcakes];
+		const staticImages = [brownies, cupcakes];
 		preloadImages(staticImages, { priority: 'high' }).catch(console.warn);
 	});
 
@@ -138,7 +150,6 @@
 
 <svelte:head>
 	<!-- Preload critical images in HTML head for faster loading -->
-	<link rel="preload" as="image" href={cakes} />
 	<link rel="preload" as="image" href={brownies} />
 	<link rel="preload" as="image" href={cupcakes} />
 	{#if data.imageUrls && data.imageUrls.length > 0}
@@ -219,20 +230,6 @@
 				</button>
 			</div>
 		</div>
-		<!-- <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-			<a
-				href="/menu"
-				class="bg-primary-500 text-surface-50 hover:bg-secondary-600 rounded-full px-8 py-3 font-medium transition duration-300"
-			>
-				View Our Menu
-			</a>
-			<a
-				href="/contact"
-				class="bg-surface-50 text-primary-700 border-primary-300 hover:bg-primary-100 rounded-full border px-8 py-3 font-medium transition duration-300"
-			>
-				Personal Order
-			</a>
-		</div> -->
 	</section>
 
 	<section>
@@ -248,8 +245,9 @@
 				class="bg-secondary-100 mb-16 flex flex-col items-center gap-8 rounded-lg p-8 pt-8 shadow-md md:flex-row"
 			>
 				<div class="md:w-1/2">
-					<img src={cakes} alt="Delicious Cakes" class="rounded-lg shadow-xl" />
+					<PrismicImage field={data.displayCake.data.display_cake} class="rounded-lg shadow-xl" />
 				</div>
+
 				<div class="space-y-2 px-4 md:w-1/2">
 					<h3 class="text-primary-600 font-mr-de-haviland text-7xl font-bold md:text-8xl">Cakes</h3>
 					<p class="text-primary-800 max-w-lg pb-4 text-xl md:text-2xl">
@@ -269,8 +267,14 @@
 			<div
 				class="bg-tertiary-100 mb-16 flex flex-col items-center gap-8 rounded-lg p-8 shadow-md md:flex-row-reverse"
 			>
-				<div class="md:w-1/2">
+				<!-- <div class="md:w-1/2">
 					<img src={brownies} alt="Decadent Brownies" class="rounded-lg shadow-xl" />
+				</div> -->
+				<div class="md:w-1/2">
+					<PrismicImage
+						field={data.displayBrownie.data.display_brownie}
+						class="rounded-lg shadow-xl"
+					/>
 				</div>
 				<div class="space-y-4 px-4 md:w-1/2">
 					<h3 class="text-primary-600 font-mr-de-haviland text-7xl font-bold md:text-8xl">
@@ -293,8 +297,14 @@
 			<div
 				class="bg-secondary-100 mb-16 flex flex-col items-center gap-8 rounded-lg p-8 shadow-md md:flex-row"
 			>
-				<div class="md:w-1/2">
+				<!-- <div class="md:w-1/2">
 					<img src={cupcakes} alt="Delightful Cupcakes" class="rounded-lg shadow-xl" />
+				</div> -->
+				<div class="md:w-1/2">
+					<PrismicImage
+						field={data.displayCupcake.data.display_cupcake}
+						class="rounded-lg shadow-xl"
+					/>
 				</div>
 				<div class="space-y-4 px-4 md:w-1/2">
 					<h3 class="text-primary-600 font-mr-de-haviland text-7xl font-bold md:text-8xl">
