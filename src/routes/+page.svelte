@@ -6,8 +6,7 @@
 	import { PrismicRichText, PrismicImage } from '@prismicio/svelte';
 	import { onMount } from 'svelte';
 
-	import brownies from '$lib/assets/pics/brownies.jpg';
-	import cupcakes from '$lib/assets/pics/cupcakes.jpg';
+	
 	import { fadeIn } from '$lib/actions/fadeIn';
 	import { preloadImages } from '$lib/utils/imagePreloader';
 	import type {
@@ -56,9 +55,6 @@
 			}
 		}
 
-		// Preload local static images with high priority
-		const staticImages = [brownies, cupcakes];
-		preloadImages(staticImages, { priority: 'high' }).catch(console.warn);
 	});
 
 	function nextSlide() {
@@ -150,8 +146,6 @@
 
 <svelte:head>
 	<!-- Preload critical images in HTML head for faster loading -->
-	<link rel="preload" as="image" href={brownies} />
-	<link rel="preload" as="image" href={cupcakes} />
 	{#if data.imageUrls && data.imageUrls.length > 0}
 		{#each data.imageUrls.slice(0, 3) as url}
 			<link rel="preload" as="image" href={url} />
@@ -267,9 +261,7 @@
 			<div
 				class="bg-tertiary-100 mb-16 flex flex-col items-center gap-8 rounded-lg p-8 shadow-md md:flex-row-reverse"
 			>
-				<!-- <div class="md:w-1/2">
-					<img src={brownies} alt="Decadent Brownies" class="rounded-lg shadow-xl" />
-				</div> -->
+				
 				<div class="md:w-1/2">
 					<PrismicImage
 						field={data.displayBrownie.data.display_brownie}
@@ -297,9 +289,7 @@
 			<div
 				class="bg-secondary-100 mb-16 flex flex-col items-center gap-8 rounded-lg p-8 shadow-md md:flex-row"
 			>
-				<!-- <div class="md:w-1/2">
-					<img src={cupcakes} alt="Delightful Cupcakes" class="rounded-lg shadow-xl" />
-				</div> -->
+				
 				<div class="md:w-1/2">
 					<PrismicImage
 						field={data.displayCupcake.data.display_cupcake}
