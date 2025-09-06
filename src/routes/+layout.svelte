@@ -114,7 +114,7 @@
 
 					{#if isPricingDropdownOpen}
 						<div
-							class="ring-opacity-5 absolute top-full left-0 z-50 mt-2 w-48 rounded-md bg-primary-100 shadow-lg ring-1 ring-surface-800"
+							class="ring-opacity-5 bg-primary-100 ring-surface-800 absolute top-full left-0 z-50 mt-2 w-48 rounded-md shadow-lg ring-1"
 							transition:slide={{ duration: 200 }}
 						>
 							<div class="py-1">
@@ -145,7 +145,9 @@
 				</div>
 
 				<a href="/order" class="text-primary-900 hover:text-primary-600 transition-colors">Order</a>
-				<a href="/delivery" class="text-primary-900 hover:text-primary-600 transition-colors">Delivery</a>
+				<a href="/delivery" class="text-primary-900 hover:text-primary-600 transition-colors"
+					>Delivery</a
+				>
 				<a href="/about" class="text-primary-900 hover:text-primary-600 transition-colors">About</a>
 				<a href="/policy" class="text-primary-900 hover:text-primary-600 transition-colors"
 					>Policy</a
@@ -319,12 +321,6 @@
 				<div>
 					<h3 class="text-primary-800 mb-3 text-lg font-bold">Soul Sweets</h3>
 					<p class="text-primary-700">Home Based Bakery Serving Russell and Nearby Communities</p>
-				</div>
-				<div>
-					<h3 class="text-primary-800 mb-3 text-lg font-bold">Hours</h3>
-					<p class="text-primary-700">Monday-Friday: 7am-6pm</p>
-					<p class="text-primary-700">Saturday: 8am-5pm</p>
-					<p class="text-primary-700">Sunday: 8am-3pm</p>
 				</div>
 				<div>
 					<a href="/contact"><h3 class="text-primary-800 mb-3 text-lg font-bold">Contact Us</h3></a>

@@ -29,7 +29,7 @@
 			<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
 				<!-- Contact Information -->
 				<div>
-					<div class="mb-8 rounded-lg bg-primary-100 p-8 shadow-md">
+					<div class="bg-primary-100 mb-8 rounded-lg p-8 shadow-md">
 						<h2 class="text-primary-700 mb-6 text-2xl font-bold">Get in Touch</h2>
 						<div class="space-y-4">
 							<div class="flex items-start">
@@ -37,51 +37,22 @@
 								<div>
 									<h3 class="text-primary-700 font-bold">Serving Russell and Nearby Communities</h3>
 									<p class="text-primary-600">Pickup available by appointment</p>
-									
 								</div>
 							</div>
-							<div class="flex items-start">
-								<div class="text-primary-600 mr-4 text-2xl">📞</div>
-								<div>
-									<h3 class="text-primary-700 font-bold">Phone</h3>
-									<p class="text-primary-600">Real-Phone-Number</p>
-								</div>
-							</div>
+
 							<div class="flex items-start">
 								<div class="text-primary-600 mr-4 text-2xl">📧</div>
 								<div>
 									<h3 class="text-primary-700 font-bold">Email</h3>
-									<p class="text-primary-600">soulsweetemail.com</p>
-								</div>
-							</div>
-							<div class="flex items-start">
-								<div class="text-primary-600 mr-4 text-2xl">🕒</div>
-								<div>
-									<h3 class="text-primary-700 font-bold">Hours</h3>
-									<p class="text-primary-600">Monday-Friday: 7am-6pm</p>
-									<p class="text-primary-600">Saturday: 8am-5pm</p>
-									<p class="text-primary-600">Sunday: 8am-3pm</p>
+									<p class="text-primary-600">bakery.soulsweets@gmail.com</p>
 								</div>
 							</div>
 						</div>
 					</div>
-
-					<!-- Map Placeholder -->
-					
-						<!-- <div class="bg-primary-100 flex h-64 items-center justify-center rounded-lg p-4 shadow-md">
-							<div class="p-4 text-center">
-								<p class="text-primary-800">
-									A helpful reminder could go here
-									<br />
-									Something that annoys you
-								</p>
-							</div>
-						</div> -->
-					
 				</div>
 
 				<!-- Contact Form -->
-				<div class="rounded-lg bg-primary-100 p-8 shadow-md">
+				<div class="bg-primary-100 rounded-lg p-8 shadow-md">
 					<h2 class="text-primary-700 mb-6 text-2xl font-bold">Send Us a Message</h2>
 
 					{#if submitted}
@@ -90,18 +61,18 @@
 						</div>
 					{/if}
 
-					<form 
-						name="contact" 
-						method="POST" 
+					<form
+						name="contact"
+						method="POST"
 						action="/"
 						data-netlify="true"
 						data-netlify-honeypot="bot-field"
-						on:submit={handleSubmit} 
+						on:submit={handleSubmit}
 						class="space-y-4"
 					>
 						<!-- Hidden input for Netlify -->
 						<input type="hidden" name="form-name" value="contact" />
-						
+
 						<!-- Honeypot field to prevent spam -->
 						<div class="hidden">
 							<label>
@@ -161,7 +132,7 @@
 						</div>
 						<button
 							type="submit"
-							class="bg-primary-600 hover:bg-primary-700 w-full rounded-full px-6 py-3 font-medium text-primary-50 transition duration-300 md:w-auto"
+							class="bg-primary-600 hover:bg-primary-700 text-primary-50 w-full rounded-full px-6 py-3 font-medium transition duration-300 md:w-auto"
 						>
 							Send Message
 						</button>
@@ -172,7 +143,7 @@
 
 		<!-- Special Orders Section -->
 		<div class="mx-auto mt-16 max-w-6xl">
-			<div class="rounded-lg bg-secondary-200 p-8">
+			<div class="bg-secondary-200 rounded-lg p-8">
 				<h2 class="text-primary-800 mb-4 text-2xl font-bold">Special Orders & Catering</h2>
 				<p class="text-primary-700 mb-4">
 					Looking for custom cakes, catering for an event, or bulk orders? We'd love to help make
@@ -182,12 +153,6 @@
 					For special orders over $300, please contact us at least 3 weeks in advance. For large
 					events or wedding cakes, we recommend reaching out 4-6 weeks ahead to ensure availability.
 				</p>
-				<a
-					href="tel:Real-Phone-Number"
-					class="bg-primary-600 text-primary-50 hover:bg-primary-700 inline-block rounded-full px-6 py-2 transition duration-300"
-				>
-					Call Us: Real-Phone-Number
-				</a>
 			</div>
 		</div>
 	</div>
