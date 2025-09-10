@@ -4,6 +4,8 @@
 		email: '',
 		phone: '',
 		productType: '',
+		sizeQuantity: '',
+		eventDate: '',
 		message: ''
 	};
 
@@ -23,6 +25,8 @@
 				email: '',
 				phone: '',
 				productType: '',
+				sizeQuantity: '',
+				eventDate: '',
 				message: ''
 			};
 			submitted = false;
@@ -201,6 +205,33 @@
 							<option value={type}>{type}</option>
 						{/each}
 					</select>
+				</div>
+
+				<div>
+					<label for="sizeQuantity" class="mb-1 block text-sm font-medium">Size / Quantity</label>
+					<p class="mb-1 block text-sm font-medium text-primary-700">Cupcakes & Brownies: 9, 12 & 24 pack</p>
+					<p class="mb-1 block text-sm font-medium text-primary-700">Cakes: 6”, 8”, 9”, 10”, & 8”x14” </p>
+					<input
+						type="text"
+						id="sizeQuantity"
+						name="sizeQuantity"
+						bind:value={formData.sizeQuantity}
+						required
+						class="focus:ring-primary-500 focus:border-primary-500 w-full rounded-lg border px-4 py-2 focus:ring-2"
+						placeholder="e.g., 12 cupcakes, 8-inch cake, 2 dozen brownies"
+					/>
+				</div>
+
+				<div>
+					<label for="eventDate" class="mb-1 block text-sm font-medium">Event Date</label>
+					<input
+						type="date"
+						id="eventDate"
+						name="eventDate"
+						bind:value={formData.eventDate}
+						required
+						class="focus:ring-primary-500 focus:border-primary-500 w-full rounded-lg border px-4 py-2 focus:ring-2"
+					/>
 				</div>
 			</div>
 
